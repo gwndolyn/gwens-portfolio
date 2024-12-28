@@ -35,18 +35,39 @@ export const ABOUT = [
 
 export const EXPERIENCES = [
   {
-    year: "Jun 2023 - Aug 2024",
-    role: "Fulfilment Associate",
-    company: "SC Fashion Trading",
-    description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions with MongoDB, ensuring efficient data handling. Collaborated with product managers to prioritize features and enhancements, optimizing user experience and functionality.`,
-    technologies: ["Javascript", "React.js", "Node.js", "MongoDB"],
+    year: "Aug 2024 - Jan 2025",
+    role: "Web Tech Associate",
+    company: "SMU",
+    description: ``,
+    technologies: ["Figma"],
   },
   {
-    year: "Jan 2020 - Apr 2023",
-    role: "Officer",
-    company: "Singapore Armed Forces",
-    description: `Led operational teams and managed resources effectively to optimize performance and readiness. Developed and executed training programs, fostering teamwork and discipline. Recognized for strategic problem-solving and guiding teams through complex challenges, contributing to the organization's success.`,
-    technologies: [],
+    year: "Sep 2024 - Oct 2024",
+    role: "Student Assistant",
+    company: "SMU Office of Research",
+    description: ``,
+    technologies: ["Excel", "Data Analysis"],
+  },
+  {
+    year: "Jun 2024 - Jun 2025",
+    role: "Data Engineer",
+    company: "Luxoft",
+    description: ``,
+    technologies: ["Big Data", "Financial Markets", "Data Architecture"],
+  },
+  {
+    year: "Mar 2024 - Present",
+    role: "Python Tutor",
+    company: "The Logic Coders",
+    description: ``,
+    technologies: ["Python"],
+  },
+  {
+    year: "Mar 2023 - Mar 2024",
+    role: "Software Developer",
+    company: "OCBC",
+    description: ``,
+    technologies: ["ReactJS", "SpringBoot", "WSO2", "Swagger UI"],
   },
 ];
 
