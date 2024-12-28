@@ -22,10 +22,10 @@ export const NAVIGATION_LINKS = [
 ];
 
 export const HERO = {
-  name: "STEVE CHIA",
-  greet: "Hello there! 👋🏻",
+  name: "GWENDOLYN LEONG",
+  greet: "",
   description:
-    "I am a Computer Engineer with a passion for exploring how technology can solve real-world problems.",
+    "I am a Software Engineer with a passion for exploring how technology can solve real-world problems.",
 };
 
 export const ABOUT = [

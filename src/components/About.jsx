@@ -1,4 +1,4 @@
-import steveImg from "../assets/steve.jpeg";
+import gwenImg from "../assets/gwen.png";
 import { ABOUT } from "../constants";
 import { motion } from "framer-motion";
 
@@ -22,7 +22,7 @@ const About = () => {
           className="w-full lg:w-1/2 lg:p-8"
         >
           <div className="flex items-center justify-center">
-            <img className="rounded-2xl" src={steveImg} alt="about" />
+            <img className="rounded-2xl" src={gwenImg} alt="about" />
           </div>
         </motion.div>
         
@@ -38,11 +38,11 @@ const About = () => {
                 {/* Highlight specific words by wrapping them in <span> */}
                 {index === 0 ? (
                   <>
-                    Whether it's through coding, systems design, or tackling technical challenges, I’m driven by the potential to create <span className="font-bold text-yellow-400">innovative solutions</span>. I have a particular interest in areas that promote <span className="font-bold text-yellow-400">inclusivity</span> and <span className="font-bold text-yellow-400">accessibility</span>, which fuels my curiosity and dedication to learning and developing <span className="font-bold text-yellow-400">impactful projects</span>.
-                  </>
+                    I am passionate about <span className="font-bold text-pink-400">technology</span> and using it to help others, positioning myself as a <span className="font-bold text-pink-400">tech all-rounder</span>. My drive comes from the potential to <span className="font-bold text-pink-400">create innovative solutions</span> that make a real difference in people's lives.
+                    </>
                 ) : (
                   <>
-                    When I'm not on my computer, I love going to the <span className="font-bold text-yellow-400">gym</span>, playing <span className="font-bold text-yellow-400">sports</span>, and <span className="font-bold text-yellow-400">volunteering</span>. Hearing stories inspires me, as I believe there’s unique value in everyone. I’m always excited to <span className="font-bold text-yellow-400">contribute</span>, <span className="font-bold text-yellow-400">grow</span>, and <span className="font-bold text-yellow-400">learn</span> from the experiences and insights others bring.
+                  Outside of my technical work, I enjoy staying active by playing sports, and volunteering in my community. I find inspiration in hearing the stories of others, as I believe there is unique value in every individual. I am always excited to contribute, grow, and learn from the experiences and insights that those around me bring.
                   </>
                 )}
               </p>

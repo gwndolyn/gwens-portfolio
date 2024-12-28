@@ -36,14 +36,14 @@ const Navbar = () => {
                     <div className="flex items-center justify-between gap-6">
                         <div>
                             <a href="#home" onClick={(e) => handleLinkClick(e, '#home')}>
-                                <img src={logo} width={150} alt="logo" className="logo" /> {/* Add logo class */}
+                                <img src={logo} width={70} alt="logo" className="logo" /> {/* Add logo class */}
                             </a>
                         </div>
                         <div>
                             <ul className="flex items-center gap-4">
                                 {NAVIGATION_LINKS.map((item, index) => (
                                     <li key={index}>
-                                        <a className="text-sm hover:text-yellow-400" href={item.href} onClick={(e) => handleLinkClick(e, item.href)}>
+                                        <a className="text-sm hover:text-pink-400" href={item.href} onClick={(e) => handleLinkClick(e, item.href)}>
                                             {item.label}
                                         </a>
                                     </li>
@@ -57,7 +57,7 @@ const Navbar = () => {
                     <div className="flex items-center justify-between">
                         <div>
                             <a href="#home" onClick={(e) => handleLinkClick(e, '#home')}>
-                                <img src={logo} alt="logo" width={90} className="logo m-2" /> {/* Add logo class */}
+                                <img src={logo} alt="logo" width={70} className="logo m-2" /> {/* Add logo class */}
                             </a>
                         </div>
                         <div className="flex items-center">

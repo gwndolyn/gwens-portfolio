@@ -22,7 +22,7 @@ const Hero = () => {
 
   // Typing effect for "Computer Engineer"
   useEffect(() => {
-    const fullText = "Computer Engineer"; // Ensure this is defined here
+    const fullText = "Software Engineer"; // Ensure this is defined here
     let index = 0;
 
     const type = () => {
@@ -58,7 +58,7 @@ const Hero = () => {
 
   const handleResumeClick = () => {
     window.open(
-      "https://drive.google.com/file/d/1lzKAgjbBt7qHPINRJ35ixihok1IY61Lx/view?usp=sharing",
+      "https://drive.google.com/file/d/1_OJQYk-xJgqB89cvT5Mkf9XOZLtxHsTs/view?usp=sharing",
       "_blank"
     );
   };
@@ -71,7 +71,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
-          className="my-8 p-2 text-4xl font-bold md:text-5xl lg:text-[7rem]"
+          className="my-8 p-2 text-4xl font-bold md:text-5xl lg:text-[5rem]"
         >
           {HERO.name}
         </motion.h2>
@@ -136,7 +136,7 @@ const Hero = () => {
               ease: "easeInOut",
               times: [0, 0.2, 0.4, 0.6, 1],
             }}
-            className="ml-10 px-10 py-2 border-2 border-white rounded-lg bg-transparent text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text transition duration-300 hover:bg-gradient-to-l hover:from-blue-500 hover:to-green-500 hover:text-white hover:border-white shadow-md"
+            className="ml-10 px-10 py-2 border-2 border-white rounded-lg bg-transparent bg-gradient-to-r text-white bg-clip-text transition duration-300 hover:bg-gradient-to-l hover:text-bold hover:border-white shadow-md"
           >
             View Resume
           </motion.button>
