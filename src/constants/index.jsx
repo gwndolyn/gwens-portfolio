@@ -61,11 +61,11 @@ export const EDUCATION = [
     ],
   },
   {
-    degree: "PCME",
-    institution: "Nanyang Junior College",
-    duration: "2019 - 2020",
+    degree: "Diploma in Information Technology, Minor in Global Readiness",
+    institution: "Ngee Ann Polytechnic",
+    duration: "2021-2024",
     description:
-      "Completed studies in the PCME (Physics, Chemistry, Mathematics, and Economics) stream, emphasizing analytical and quantitative skills. Participated in mathematical competitions and collaborative projects, fostering a strong foundation in scientific principles and problem-solving methodologies.",
+      "",
   },
 ];
 
@@ -114,23 +114,19 @@ export const PROJECTS = [
 
 export const SOCIAL_MEDIA_LINKS = [
   {
-    href: "mailto:stevexchia@gmail.com",
+    href: "mailto:gwenxdolyn@gmail.com",
     icon: <MdEmail fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://discord.com/users/stxvx__",
-    icon: <FaDiscord fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://instagram.com/stxvx__/",
+    href: "https://instagram.com/gwenxdolyn/",
     icon: <FaInstagram fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://github.com/Stevexchia/",
+    href: "https://github.com/gwndolyn/",
     icon: <FaGithub fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://www.linkedin.com/in/steve-chia-8023591ba/",
+    href: "https://www.linkedin.com/in/gwndolyn",
     icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
   },
 ];
