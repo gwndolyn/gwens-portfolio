@@ -52,11 +52,13 @@ export const EXPERIENCES = [
 
 export const EDUCATION = [
   {
-    degree: "Bachelor of Engineering in Computer Engineering",
-    institution: "National University of Singapore",
-    duration: "2023 - 2027",
-    description:
-      "Currently pursuing a Bachelor’s degree in Computer Engineering with a second major in Management and Innovation & Design Programme. The curriculum covers a wide range of topics, including software engineering, systems architecture, data structures, and algorithms. Involvement in various technical projects and hackathons enhances practical skills in programming, project management, and teamwork.",
+    degree: "Bachelor of Science in Information Systems",
+    institution: "Singapore Management University",
+    duration: "2024 - 2028",
+    description: [
+      "• Web Tech Associate for SMU Patron's Day 2025",
+      "• Student Assistant for SMU Office of Research",
+    ],
   },
   {
     degree: "PCME",
