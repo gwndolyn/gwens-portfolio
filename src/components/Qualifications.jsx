@@ -21,7 +21,7 @@ const Qualifications = () => {
           <button
             onClick={() => setActiveTab('education')}
             className={`px-4 py-2 rounded-full transition-colors duration-300 ${
-              activeTab === 'education' ? 'bg-white text-black' : 'text-white hover:bg-slate-500'
+              activeTab === 'education' ? 'bg-white text-black' : 'text-white hover:bg-pink-400'
             }`}
           >
             Education
@@ -29,7 +29,7 @@ const Qualifications = () => {
           <button
             onClick={() => setActiveTab('experience')}
             className={`px-4 py-2 rounded-full transition-colors duration-300 ${
-              activeTab === 'experience' ? 'bg-white text-black' : 'text-white hover:bg-slate-500'
+              activeTab === 'experience' ? 'bg-white text-black' : 'text-white hover:bg-pink-400'
             }`}
           >
             Experiences
