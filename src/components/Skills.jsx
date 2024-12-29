@@ -30,7 +30,7 @@ const Skills = () => {
           transition={{ duration: 1 }}
           className="my-20 text-center text-4xl"
         >
-          Technologies
+          Skills
         </motion.h2>
 
         <motion.div

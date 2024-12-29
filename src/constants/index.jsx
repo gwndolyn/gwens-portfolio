@@ -93,42 +93,10 @@ export const EDUCATION = [
 export const PROJECTS = [
   {
     id: 1,
-    name: "BdayBuddy",
-    description:
-      "BdayBuddy is a user-friendly app that enhances the gift-giving experience by offering personalized suggestions based on the recipient's hobbies and interests, making it easy to find the perfect gift for birthdays and special occasions while saving time and reducing stress. It is built using React, Node.js, and Firebase.",
-    image: projectImage1,
-    githubLink: "",
-  },
-  {
-    id: 2,
-    name: "PuddleJumpers",
-    description:
-      "A simple weather app that provides real-time updates based on your city or location. Powered by React and the OpenWeather API, it offers quick access to temperature, weather conditions, and more in an easy-to-use interface.",
-    image: projectImage2,
-    githubLink: "https://github.com/",
-  },
-  {
-    id: 3,
     name: "Personal Portfolio",
     description:
       "A personal portfolio website built with React and Tailwind CSS to showcase my skills, projects, and contact information.",
     image: projectImage3,
-    githubLink: "https://github.com/",
-  },
-  {
-    id: 4,
-    name: "mBot",
-    description:
-      "mBot navigates mazes by detecting paths and avoiding obstacles. It uses color detection, IR sensors, and ultrasonic sensors to find the quickest route through any challenge.",
-    image: projectImage4,
-    githubLink: "https://github.com/",
-  },
-  {
-    id: 5,
-    name: "Alex",
-    description:
-      "Alex locates survivors in tough environments. It uses LiDAR for mapping, powered by Arduino and Raspberry Pi 3, along with heat signature detectors, color sensors, and a buzzer to assist in rescue missions.",
-    image: projectImage5,
     githubLink: "https://github.com/",
   },
 ];
