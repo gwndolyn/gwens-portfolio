@@ -1,3 +1,4 @@
+Skills and technologies split up
 Certifications
 Volunteer work
 Education line break

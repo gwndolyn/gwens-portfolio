@@ -63,8 +63,9 @@ const App = () => {
 
 
       <div className="relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto">
-        <Hero />
+
         <Navbar />
+        <Hero />
         <About />
         <Skills />
         <Qualifications />
