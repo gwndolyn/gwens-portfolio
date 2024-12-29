@@ -22,7 +22,7 @@ const Hero = () => {
 
   // Typing effect for "Computer Engineer"
   useEffect(() => {
-    const fullText = "Software Engineer"; // Ensure this is defined here
+    const fullText = "GWENDOLYN LEONG"; // Ensure this is defined here
     let index = 0;
 
     const type = () => {
@@ -65,7 +65,7 @@ const Hero = () => {
 
   return (
     <section className="relative flex flex-col md:flex-row min-h-screen items-center" id="home" style={{ height: "100vh" }}>
-      <div className="w-full md:w-1/2 relative z-10">
+      <div className="w-full md:w-1/2 relative z-10 mt-20 lg:-mt-10">
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -73,7 +73,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="my-8 p-2 text-4xl font-bold md:text-5xl lg:text-[5rem]"
         >
-          {HERO.name}
+          {typingText}
         </motion.h2>
 
         <motion.p
@@ -83,18 +83,18 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="p-2 text-3xl tracking-tighter lg:text-4xl"
         >
-          {HERO.greet}
+          {HERO.greet} 
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ opacity: 0 }} 
           transition={{ duration: 1 }}
           className="mb-8 p-2 text-xl"
         >
           I am a{" "}
-          <span className="text-pink-500 font-bold">{typingText}</span>{" "}
+          <span className="text-pink-400 font-bold">Software Engineer</span>{" "}
           passionate about using technology to solve real-world problems.
         </motion.p>
 
