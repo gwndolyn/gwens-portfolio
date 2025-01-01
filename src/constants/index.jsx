@@ -281,15 +281,15 @@ export const certificationsData = [
         image: cert6,
       },
       {
-        name: "Shopee Code League 2022 – Participant",
+        name: "NP Mentors Silver Award",
         image: cert18,
       },
       {
-        name: "Shopee Code League 2022 – Participant",
+        name: "Shenzhen Polytechnic OIP",
         image: cert19,
       },
       {
-        name: "Shopee Code League 2022 – Participant",
+        name: "Certified Peer Helper",
         image: cert20,
       },
     ],

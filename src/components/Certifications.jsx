@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { certificationsData } from "../constants"; // Import certifications data from constants
 
 const Certifications = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to toggle sidebar visibility on mobile
+
+  // Ensure the page scrolls to the top when the component is mounted
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   // Handle category click to scroll smoothly to that category
   const handleCategoryClick = (categoryId) => {
@@ -69,7 +77,7 @@ const Certifications = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="border-l-4 border-pink-400 pl-4">
-              <h3 className="font-bold text-xl mb-6 hover:text-pink-400" onClick={handleScrollToTop}>Certifications</h3>
+              <h3 className="font-bold text-xl mb-6">Certifications</h3>
               {certificationsData.map((category, idx) => (
                 <p
                   key={idx}
@@ -137,8 +145,14 @@ const Certifications = () => {
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } lg:hidden`}
         >
-          <div className="border-l-4 border-pink-400 pl-4 mt-20">
-            <h3 className="font-bold text-xl mb-6 hover:text-pink-400" onClick={handleScrollToTop}>Certifications</h3>
+          <div className="border-l-4 border-pink-400 pl-4">
+            <h3 className="font-bold text-xl mb-6">Certifications</h3>
+            <p
+              className="cursor-pointer mb-4 hover:text-pink-400"
+              onClick={handleScrollToTop}
+            >
+              Certifications
+            </p>
             {certificationsData.map((category, idx) => (
               <p
                 key={idx}
@@ -156,7 +170,7 @@ const Certifications = () => {
         {/* Mobile Sidebar Toggle Button */}
         <div className="lg:hidden fixed bottom-4 left-4 z-40">
           <button
-            className="p-4 bg-pink-400 text-white rounded-full flex items-center justify-center shadow-lg"
+            className="p-4 bg-pink-500 text-white rounded-full flex items-center justify-center shadow-lg"
             onClick={toggleSidebar}
           >
             <svg
