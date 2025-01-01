@@ -5,11 +5,7 @@ import { motion } from "framer-motion"
 const Contact = () => {
   return (
     <div className="p-4 lg:w-3/4" id="contact">
-        <motion.h2 
-            whileInView={{ opacity: 1}}
-            initial={{ opacity: 0}}
-            transition={{ duration: 1 }}
-        className="mb-8 text-center text-3xl lg:text-4xl">Contact</motion.h2>
+
 
       <div className="mb-10 mt-5">
         <div>
@@ -27,9 +23,7 @@ const Contact = () => {
         <div className="flex items-center justify-center gap-8">
           {SOCIAL_MEDIA_LINKS.map((link, index) => (
             <motion.a
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.2, delay: index * 0.5 }}
+
               key={index}
               href={link.href}
               target="_blank"
