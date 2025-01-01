@@ -14,10 +14,11 @@ import projectImage4 from "../assets/mbot.png";
 import projectImage5 from "../assets/alex.png";
 
 export const NAVIGATION_LINKS = [
-  { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Qualifications", href: "#qualify" },
   { label: "Projects", href: "#projects" },
+  { label: "Volunteering", href: "/volunteering" },
+  { label: "Certifications", href: "/certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
