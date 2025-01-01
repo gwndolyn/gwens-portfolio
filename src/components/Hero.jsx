@@ -52,9 +52,15 @@ const Hero = () => {
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" }); 
+      const aboutPosition = aboutSection.offsetTop; // Get the position relative to the document
+      window.scrollTo({
+        top: aboutPosition - 80, // Add your offset here
+        behavior: "smooth", // Smooth scroll
+      });
     }
   };
+  
+  
 
   const handleResumeClick = () => {
     window.open(
