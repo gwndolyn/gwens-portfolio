@@ -52,7 +52,7 @@ const Hero = () => {
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
+      aboutSection.scrollIntoView({ behavior: "smooth" }); 
     }
   };
 
@@ -76,7 +76,7 @@ const Hero = () => {
           {typingText}
         </motion.h2>
 
-        <motion.p
+        <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

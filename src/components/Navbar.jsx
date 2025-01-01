@@ -15,7 +15,7 @@ const Navbar = () => {
         e.preventDefault();
         const targetElement = document.querySelector(href);
         if (targetElement) {
-            const offset = -85;
+            const offset = -25;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY + offset;
 
@@ -82,7 +82,7 @@ const Navbar = () => {
                         </ul>
                     )}
                 </div>
-            </nav>
+            </nav> 
         </div>
     );
 };

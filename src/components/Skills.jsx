@@ -21,6 +21,10 @@ const iconVariants = (duration) => ({
 });
 
 const Skills = () => {
+  const technologies = [
+    "FullStack Dev", "Machine Learning", "LLM", "Robotic Process Automation", "Salesforce CRM", "Cloud Computing", "Software Engineering", "Object-Oriented Programming", "Databases", // Repeat as many times as needed
+  ];
+  
   return (
     <section className="pt-20" id="skills">
       <div className="border-b border-neutral-800 pb-24">
@@ -237,6 +241,24 @@ const Skills = () => {
             <p className="text-center mt-4">AWS</p>
           </div>
         </motion.div>
+        <div className="flex flex-wrap gap-2 justify-center mt-4">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 100 }}
+            transition={{ duration: 1.5 }}
+            className="flex flex-wrap items-center justify-center"
+            >
+          {technologies.map((tech, index) => (
+            <span
+              key={index}
+              className="mr-2 mt-4 rounded bg-neutral-800 px-2 py-1 text-sm font-medium text-pink-300"
+            >
+              {tech}
+            </span>
+          ))}
+          </motion.div>
+        </div>
+        
       </div>
     </section>
   );
