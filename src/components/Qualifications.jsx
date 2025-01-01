@@ -20,17 +20,15 @@ const Qualifications = () => {
         className="flex justify-center mb-5">
           <button
             onClick={() => setActiveTab('education')}
-            className={`px-4 py-2 rounded-full transition-colors duration-300 ${
-              activeTab === 'education' ? 'bg-white text-black' : 'text-white hover:bg-pink-400'
-            }`}
+            className={`px-6 py-3 rounded-full transition-all duration-300 
+              ${activeTab === 'education' ? 'bg-white text-black font-bold' : 'text-white font-normal hover:font-bold'}`}
           >
             Education
           </button>
           <button
             onClick={() => setActiveTab('experience')}
-            className={`px-4 py-2 rounded-full transition-colors duration-300 ${
-              activeTab === 'experience' ? 'bg-white text-black' : 'text-white hover:bg-pink-400'
-            }`}
+            className={`px-6 py-3 rounded-full transition-all duration-300 
+              ${activeTab === 'experience' ? 'bg-white text-black font-bold' : 'text-white font-normal hover:font-bold'}`}
           >
             Experiences
           </button>
