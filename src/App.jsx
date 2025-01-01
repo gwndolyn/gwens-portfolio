@@ -100,6 +100,7 @@ const App = () => {
                   transition={{ duration: 1 }}
                 >
                   <Certifications />
+                  <Contact />
                 </motion.div>
               }
             />

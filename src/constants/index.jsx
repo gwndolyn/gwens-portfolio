@@ -13,6 +13,36 @@ import projectImage3 from "../assets/website.jpeg";
 import projectImage4 from "../assets/mbot.png";
 import projectImage5 from "../assets/alex.png";
 
+import cert1 from "../assets/certs png/AWS Cloud Solutions-1.png";
+import cert2 from "../assets/certs png/AWS Fundamentals-1.png";
+import cert3 from "../assets/certs png/brainhack.png";
+import cert4 from "../assets/certs png/Coursera Google Project-1.png";
+import cert5 from "../assets/certs png/Cybersecurity-1.png";
+import cert6 from "../assets/certs png/Edusave.png";
+import cert7 from "../assets/certs png/Enterprise_Design_Thinking.png";
+import cert8 from "../assets/certs png/Google Advanced Data-1.png";
+import cert9 from "../assets/certs png/Google Business Intelligence-1.png";
+import cert10 from "../assets/certs png/Google Digital Marketing & E-commerce-1.png";
+import cert11 from "../assets/certs png/Google IT Automation-1.png";
+import cert12 from "../assets/certs png/Google UX Design-1.png";
+import cert13 from "../assets/certs png/GoogleDataAnalyticsCertificate-1.png";
+import cert14 from "../assets/certs png/IBM AI Engineering-1.png";
+import cert15 from "../assets/certs png/IBM Data Engineering-1.png";
+import cert16 from "../assets/certs png/IBM DevOps and Software Engineering-1.png";
+import cert17 from "../assets/certs png/IT Support-1.png";
+import cert18 from "../assets/certs png/np mentors cert-1.png";
+import cert19 from "../assets/certs png/oip.png";
+import cert20 from "../assets/certs png/Peer helper cert-1.png";
+import cert21 from "../assets/certs png/Professional Scrum Master I-1.png";
+import cert22 from "../assets/certs png/proid industry showcase-1.png";
+import cert23 from "../assets/certs png/Shopee_Code_League.png";
+import cert24 from "../assets/certs png/snowflake-1.png";
+import cert25 from "../assets/certs png/sql-1.png";
+import cert26 from "../assets/certs png/workato automation pro 1-1.png";
+import cert27 from "../assets/certs png/AI foundations.png"
+import cert28 from "../assets/certs png/RPA Developer Foundation-1.png"
+
+
 export const NAVIGATION_LINKS = [
   { label: "Skills", href: "#skills" },
   { label: "Qualifications", href: "#qualify" },
@@ -38,7 +68,7 @@ export const EXPERIENCES = [
   {
     year: "Aug 2024 - Jan 2025",
     role: "Web Tech Associate",
-    company: "SMU",
+    company: "SMU Patron's Day",
     description: ``,
     technologies: ["Figma"],
   },
@@ -105,6 +135,167 @@ export const PROJECTS = [
     githubLink: "https://github.com/",
   },
 ];
+
+export const certificationsData = [
+  {
+    category: "AI & Machine Learning",
+    certs: [
+      {
+        name: "IBM AI Engineering Specialization",
+        image: cert14,
+      },
+      {
+        name: "Artificial Intelligence Foundations: Neural Networks",
+        image: cert27,
+      },
+    ],
+  },
+  {
+    category: "Data Engineering",
+    certs: [
+      {
+        name: "Google Data Analytics Specialization",
+        image: cert13,
+      },
+      {
+        name: "Google Advanced Data Analytics Specialization",
+        image: cert8,
+      },
+      {
+        name: "IBM Data Engineering Specialization",
+        image: cert15,
+      },
+      {
+        name: "Snowflake",
+        image: cert24,
+      },
+      {
+        name: "The complete SQL Bootcamp",
+        image: cert25,
+      },
+    ],
+  },
+  {
+    category: "Cloud Computing",
+    certs: [
+      {
+        name: "AWS Fundamentals Specialization",
+        image: cert2,
+      },
+      {
+        name: "AWS Cloud Solution Architect Specialization",
+        image: cert1,
+      },
+    ],
+  },
+  {
+    category: "Software Engineering & Development",
+    certs: [
+      {
+        name: "IBM DevOps and Software Engineering Specialization",
+        image: cert16,
+      },
+      {
+        name: "Google IT Automation with Python Specialization",
+        image: cert11,
+      },
+      {
+        name: "Google UX Design",
+        image: cert12,
+      },
+      {
+        name: "UI Path RPA Developer Foundation",
+        image: cert28,
+      },
+      {
+        name: "Workato Automation Pro 1",
+        image: cert26,
+      },
+    ],
+  },
+  {
+    category: "Business & Analytics",
+    certs: [
+      {
+        name: "Google Business Analytics Specialization",
+        image: cert9,
+      },
+      {
+        name: "Google Digital Marketing & E-commerce Specialization",
+        image: cert10,
+      },
+    ],
+  },
+  {
+    category: "Project Development",
+    certs: [
+      {
+        name: "Google Project Management Specialization",
+        image: cert4,
+      },
+      {
+        name: "Professional Scrum Master I",
+        image: cert21,
+      },
+      {
+        name: "Enterprise Design Thinking Practitioner",
+        image: cert7,
+      },
+    ],
+  },
+  {
+    category: "Cybersecurity & IT Support",
+    certs: [
+      {
+        name: "Google Cybersecurity Specialization",
+        image: cert5,
+      },
+      {
+        name: "Google IT Support Specialization",
+        image: cert17,
+      },
+    ],
+  },
+  {
+    category: "Hackathons",
+    certs: [
+      {
+        name: "DSTA Brainhack 2024",
+        image: cert3,
+      },
+      {
+        name: "Shopee Code League 2022 – Participant",
+        image: cert23,
+      },
+    ],
+  },
+  {
+    category: "Other Certifications",
+    certs: [
+      {
+        name: "Project ID Industry Showcase",
+        image: cert22,
+      },
+      {
+        name: "Edusave Skills Award 2024",
+        image: cert6,
+      },
+      {
+        name: "Shopee Code League 2022 – Participant",
+        image: cert18,
+      },
+      {
+        name: "Shopee Code League 2022 – Participant",
+        image: cert19,
+      },
+      {
+        name: "Shopee Code League 2022 – Participant",
+        image: cert20,
+      },
+    ],
+  },
+];
+
 
 export const SOCIAL_MEDIA_LINKS = [
   {
