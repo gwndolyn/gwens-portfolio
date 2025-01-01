@@ -73,20 +73,24 @@ export const EXPERIENCES = [
 
 export const EDUCATION = [
   {
-    degree: "Bachelor of Science in Information Systems",
+    degree: "Bachelor of Science, Information Systems",
     institution: "Singapore Management University",
     duration: "2024 - 2028",
     description: [
-      "• Web Tech Associate for SMU Patron's Day 2025",
-      "• Student Assistant for SMU Office of Research",
+      "Web Tech Associate for SMU Patron's Day 2025",
+      "Student Assistant for SMU Office of Research",
     ],
   },
   {
     degree: "Diploma in Information Technology, Minor in Global Readiness",
     institution: "Ngee Ann Polytechnic",
     duration: "2021-2024",
-    description:
-      "",
+    description: [
+      "NP Mentors Silver Award, 2022",
+      "Certified Peer Helper, 2022",
+      "Project ID Industry Showcase (Top 7 Teams in cohort), 2024",
+      "Edusave Skills Award, 2024",
+    ],
   },
 ];
 

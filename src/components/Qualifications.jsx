@@ -54,7 +54,12 @@ const Qualifications = () => {
                     <h6 className="mb-2 font-semibold">
                       {edu.institution} - <span className="text-sm text-purple-100">{edu.degree}</span>
                     </h6>
-                    <p className="mb-4 text-neutral-400">{edu.description}</p>
+                    {/* Split description into list items */}
+                    <ul className="mb-4 text-neutral-400 list-inside list-disc">
+                      {edu.description && edu.description.map((desc, index) => (
+                        <li key={index}>{desc}</li>
+                      ))}
+                    </ul>
                   </motion.div>
                 </div>
               ))}
