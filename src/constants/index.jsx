@@ -49,7 +49,6 @@ export const NAVIGATION_LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Volunteering", href: "/volunteering" },
   { label: "Certifications", href: "/certifications" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export const HERO = {

@@ -1,4 +1,3 @@
-import logo from "../assets/logo.png"
 import { SOCIAL_MEDIA_LINKS } from "../constants"
 import { motion } from "framer-motion"
 
@@ -15,7 +14,7 @@ const Contact = () => {
             transition={{ duration: 1 }}
             className="text-center tracking-wide mb-10 text-xl"
           >
-            Feel free to contact me below:
+
           </motion.p>
         </div>
 

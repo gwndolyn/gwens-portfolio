@@ -77,7 +77,8 @@ const Certifications = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="border-l-4 border-pink-400 pl-4">
-              <h3 className="font-bold text-xl mb-6">Certifications</h3>
+              <h3 className="font-bold text-xl mb-6 hover:text-pink-400"
+              onClick={handleScrollToTop}>Certifications</h3>
               {certificationsData.map((category, idx) => (
                 <p
                   key={idx}
@@ -145,14 +146,9 @@ const Certifications = () => {
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } lg:hidden`}
         >
-          <div className="border-l-4 border-pink-400 pl-4">
-            <h3 className="font-bold text-xl mb-6">Certifications</h3>
-            <p
-              className="cursor-pointer mb-4 hover:text-pink-400"
-              onClick={handleScrollToTop}
-            >
-              Certifications
-            </p>
+          <div className="border-l-4 border-pink-400 pl-4 mt-20">
+            <h3 className="font-bold text-xl mb-6 hover:text-pink-400"
+              onClick={handleScrollToTop}>Certifications</h3>
             {certificationsData.map((category, idx) => (
               <p
                 key={idx}

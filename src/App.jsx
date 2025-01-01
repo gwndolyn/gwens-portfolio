@@ -117,6 +117,7 @@ const App = () => {
                   transition={{ duration: 1 }}
                 >
                   <Volunteering />
+                  <Contact />
                 </motion.div>
               }
             />
