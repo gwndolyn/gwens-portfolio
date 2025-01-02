@@ -101,7 +101,7 @@ const Navbar = () => {
 
           {isMobileMenuOpen && (
             <motion.div
-              className="absolute left-0 top-16 w-full rounded-lg backdrop-blur-md z-50 p-4"
+              className="absolute left-0 top-16 w-full rounded-lg bg-black/40 backdrop-blur-md z-50 p-4"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}

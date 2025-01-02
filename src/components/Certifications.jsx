@@ -142,7 +142,7 @@ const Certifications = () => {
           />
         )}
         <motion.div
-          className={`fixed top-0 left-0 h-full bg-gray-900 bg-opacity-70 p-6 text-neutral-400 text-sm z-30 w-64 transform transition-transform duration-300 ${
+          className={`fixed top-0 left-0 h-full bg-black/40 bg-opacity-70 p-6 text-neutral-400 text-sm z-30 w-64 transform transition-transform duration-300 ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } lg:hidden`}
         >
