@@ -1,29 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const VOLUNTEERING_ACTIVITIES = [
-  {
-    id: 1,
-    title: "Community Cleanup Drive",
-    description: "Promoted a cleaner environment by organizing public cleanup events.",
-    date: "June 2023",
-    image: "/assets/cleanup.jpg",
-  },
-  {
-    id: 2,
-    title: "Food Distribution",
-    description: "Distributed food to underprivileged families during the festive season.",
-    date: "December 2022",
-    image: "/assets/food.jpg",
-  },
-  {
-    id: 3,
-    title: "Animal Shelter Volunteering",
-    description: "Provided care for animals and assisted in adoption events.",
-    date: "August 2021",
-    image: "/assets/shelter.jpg",
-  },
-];
+import {VOLUNTEERING_ACTIVITIES} from "../constants"
 
 const Volunteering = () => {
   return (
@@ -47,7 +24,7 @@ const Volunteering = () => {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 lg:px-8 mt-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 px-4 lg:px-8 mt-10">
           {VOLUNTEERING_ACTIVITIES.map((activity) => (
             <motion.div
               key={activity.id}
@@ -55,7 +32,7 @@ const Volunteering = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
-              className="group relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-lg shadow-pink-500/50 shadow-lg"
+              className="group relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-lg shadow-pink-500/50 shadow-lg mb-10"
             >
               {/* Image */}
               <motion.img
@@ -71,8 +48,9 @@ const Volunteering = () => {
                   {activity.title}
                 </h3>
                 <p className="text-sm text-neutral-400">{activity.description}</p>
-                <span className="mr-2 mt-4 rounded bg-neutral-800 px-2 py-1 text-sm font-medium text-pink-300 inline-block">
-                  {activity.date}
+                <p className="mt-2 text-sm text-neutral-300">{activity.date}</p>
+                <span className="mt-2 inline-block rounded bg-neutral-800 px-2 py-1 text-sm font-medium text-pink-300">
+                  {activity.organization}
                 </span>
               </div>
             </motion.div>

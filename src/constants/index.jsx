@@ -39,8 +39,19 @@ import cert23 from "../assets/certs png/Shopee_Code_League.png";
 import cert24 from "../assets/certs png/snowflake-1.png";
 import cert25 from "../assets/certs png/sql-1.png";
 import cert26 from "../assets/certs png/workato automation pro 1-1.png";
-import cert27 from "../assets/certs png/AI foundations.png"
-import cert28 from "../assets/certs png/RPA Developer Foundation-1.png"
+import cert27 from "../assets/certs png/AI foundations.png";
+import cert28 from "../assets/certs png/RPA Developer Foundation-1.png";
+
+import v1 from "../assets/volunteer/1.jpg";
+import v2 from "../assets/volunteer/2.jpg";
+import v3 from "../assets/volunteer/3.jpg";
+import v4 from "../assets/volunteer/4.jpg";
+import v5 from "../assets/volunteer/5.jpg";
+import v6 from "../assets/volunteer/6.jpg";
+import v7 from "../assets/volunteer/7.jpg";
+import v8 from "../assets/volunteer/8.jpg";
+import v9 from "../assets/volunteer/ocbc.jpg";
+import v10 from "../assets/volunteer/9.jpg";
 
 
 export const NAVIGATION_LINKS = [
@@ -292,6 +303,81 @@ export const certificationsData = [
         image: cert20,
       },
     ],
+  },
+];
+
+export const VOLUNTEERING_ACTIVITIES = [
+  {
+    id: 9,
+    title: "OCBC Cares",
+    description: "Engaged in door knocking and distributed flyers to reach out to seniors living alone. Shared information about diverse active ageing programs and services offered by Lions Befrienders.",
+    date: "Jul 2023",
+    image: v9, // Replace with the actual image path if available
+    organization: "Lions Befrienders",
+  },
+  {
+    id: 4,
+    title: "Volunteer Tutor",
+    description: "Mentored primary school children at Care Corner Woodlands Centre, assisting with their school work on a weekly basis.",
+    date: "Jun 2021 - Dec 2021",
+    image: v2, // Replace with the actual image path if available
+    organization: "Care Corner Singapore Ltd",
+  },
+  {
+    id: 1,
+    title: "Project XL in Excel",
+    description: "Facilitated an event to teach children from Chaoyang School how to use Excel and its various functions.",
+    date: "Sept 2022",
+    image: v6, // Replace with the actual image path if available
+    organization: "Chaoyang School",
+  },
+  {
+    id: 2,
+    title: "Project Rawr-tastic",
+    description: "Organized activities for children and taught them how to create a dessert.",
+    date: "Sept 2022",
+    image: v5, // Replace with the actual image path if available
+    organization: "Chinese Development Assistance Council",
+  },
+  {
+    id: 3,
+    title: "Volunteer",
+    description: "Educated the elderly on creating photo collages and utilizing various functions in Google Photos.",
+    date: "Jul 2022",
+    image: v7, // Replace with the actual image path if available
+    organization: "Yong-en Care Centre",
+  },
+  {
+    id: 5,
+    title: "Project Green Thumbs",
+    description: "Hosted an online workshop teaching children how to make and care for their own terrarium.",
+    date: "Sept 2021",
+    image: v4, // Replace with the actual image path if available
+    organization: "Care Corner Tasek Jurong Organisation",
+  },
+  {
+    id: 6,
+    title: "Project Interact",
+    description: "Participated in bridging the generation gap by engaging with the elderly over Zoom, playing games, and teaching them how to use social media.",
+    date: "Jun 2021",
+    image: v3, // Replace with the actual image path if available
+    organization: "VIA Project",
+  },
+  {
+    id: 7,
+    title: "Volunteer",
+    description: "Planned and executed a class project, interacting with the elderly and organizing a donation drive for daily necessities.",
+    date: "Mar 2019",
+    image: v1, // Replace with the actual image path if available
+    organization: "Lions Befrienders Senior Activity Centre",
+  },
+  {
+    id: 8,
+    title: "Volunteer",
+    description: "Tutored underprivileged children and assisting in distributing Christmas packages to families in need.",
+    date: "Dec 2018",
+    image: v10, // Replace with the actual image path if available
+    organization: "Brighton Connection Student Care Centre",
   },
 ];
 
