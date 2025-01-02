@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import {VOLUNTEERING_ACTIVITIES} from "../constants"
+import { useLocation } from "react-router-dom";
+import { VOLUNTEERING_ACTIVITIES } from "../constants";
 
 const Volunteering = () => {
+  const location = useLocation();
+
+  // Scroll to the top whenever the route changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [location]);
+
   return (
     <section className="pt-20" id="volunteering">
       {/* Header */}
