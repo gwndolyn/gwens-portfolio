@@ -57,7 +57,7 @@ import v10 from "../assets/volunteer/9.jpg";
 export const NAVIGATION_LINKS = [
   { label: "Skills", href: "#skills" },
   { label: "Qualifications", href: "#qualify" },
-  { label: "Projects", href: "#projects" },
+  { label: "Projects", href: "/projects" },
   { label: "Volunteering", href: "/volunteering" },
   { label: "Certifications", href: "/certifications" },
 ];
@@ -135,16 +135,53 @@ export const EDUCATION = [
   },
 ];
 
+
+
+export const PROJECT_TAGS = ["All", "Web Development", "Machine Learning", "RPA", "Mobile Apps"];
+
 export const PROJECTS = [
   {
     id: 1,
     name: "Personal Portfolio",
-    description:
-      "A personal portfolio website built with React and Tailwind CSS to showcase my skills, projects, and contact information.",
-    image: projectImage3,
-    githubLink: "https://github.com/",
+    description: "A modern portfolio website to showcase my skills and projects.",
+    image: "/assets/portfolio.jpg", // Replace with actual image paths
+    githubLink: "https://github.com/your-username/portfolio",
+    tags: ["Web Development"],
+  },
+  {
+    id: 2,
+    name: "E-Commerce Store",
+    description: "An e-commerce platform for buying and selling products online.",
+    image: "/assets/ecommerce.jpg",
+    githubLink: "https://github.com/your-username/ecommerce-store",
+    tags: ["Web Development", "Mobile Apps"],
+  },
+  {
+    id: 3,
+    name: "Weather App",
+    description: "A simple app to display real-time weather information using OpenWeather API.",
+    image: "/assets/weather-app.jpg",
+    githubLink: "https://github.com/your-username/weather-app",
+    tags: ["Mobile Apps"],
+  },
+  {
+    id: 4,
+    name: "Stock Price Predictor",
+    description: "A machine learning model to predict stock prices using historical data.",
+    image: "/assets/stock-predictor.jpg",
+    githubLink: "https://github.com/your-username/stock-price-predictor",
+    tags: ["Machine Learning"],
+  },
+  {
+    id: 5,
+    name: "RPA Automation",
+    description: "Automated invoice processing using Robotic Process Automation (RPA).",
+    image: "/assets/rpa.jpg",
+    githubLink: "https://github.com/your-username/rpa-automation",
+    tags: ["RPA"],
   },
 ];
+
 
 export const certificationsData = [
   {
