@@ -103,26 +103,31 @@ const Projects = () => {
               whileHover={{ scale: 1.05 }}
               className="group relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-lg shadow-pink-500/50 shadow-lg"
             >
-              {/* Image */}
-              <motion.img
-                whileHover={{ scale: 1.1 }}
-                src={project.image}
-                alt={project.name}
-                className="h-48 w-full object-cover transition-transform duration-500 rounded-t-3xl"
-              />
-
               {/* Details */}
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-white mb-2">
                   {project.name}
                 </h3>
-                <p className="text-sm text-neutral-400">{project.description}</p>
+                <p className="text-sm text-neutral-400 mb-4">
+                  {project.description}
+                </p>
+                {/* Technologies Used */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="rounded bg-neutral-800 px-2 py-1 text-xs font-medium text-pink-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                {/* GitHub Link */}
                 <a
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-block rounded-full bg-white text-black hover:bg-gray-300 transition px-3 py-3 text-xs
-"
+                  className="inline-block rounded-full bg-white text-black hover:bg-gray-300 transition px-3 py-2 text-xs"
                 >
                   <div className="flex items-center">
                     <span>View on GitHub</span>

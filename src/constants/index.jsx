@@ -137,50 +137,101 @@ export const EDUCATION = [
 
 
 
-export const PROJECT_TAGS = ["All", "Web Development", "Machine Learning", "RPA", "Mobile Apps"];
+export const PROJECT_TAGS = ["All", "Web Development", "Machine Learning", "RPA", "Mobile Apps", "Excel"];
 
 export const PROJECTS = [
   {
     id: 1,
-    name: "Personal Portfolio",
-    description: "A modern portfolio website to showcase my skills and projects.",
-    image: "/assets/portfolio.jpg", // Replace with actual image paths
-    githubLink: "https://github.com/your-username/portfolio",
-    tags: ["Web Development"],
+    name: "DSTA Brainhack 2024",
+    description:
+      "Participated in the TIL-AI Autonomous Robotics Challenge. Tasks included Automatic Speech Recognition (ASR), Natural Language Processing (NLP), and Vision-Language Model (VLM) tasks for autonomous target detection and drone takedown.",
+    technologies: ["Google Cloud", "Colab", "Python", "HuggingFace"],
+    image: "brainhack.png",
+    githubLink: "",
+    tags: ["AI", "Machine Learning", "Natural Language Processing", "Computer Vision"],
   },
   {
     id: 2,
-    name: "E-Commerce Store",
-    description: "An e-commerce platform for buying and selling products online.",
-    image: "/assets/ecommerce.jpg",
-    githubLink: "https://github.com/your-username/ecommerce-store",
-    tags: ["Web Development", "Mobile Apps"],
+    name: "OCBC Hackathon",
+    description:
+      "Developed a Digital Securities Product and Account Application with both a web and mobile application, along with database integration and data visualizations.",
+    technologies: ["ASP.NET", "Android Studio", "SQL", "AWS", "Power BI"],
+    image:"",
+    githubLink: "https://gtgwendolyn.wixsite.com/website/ocbc",
+    tags: ["Web Development", "Mobile Apps", "Hackathon"],
   },
   {
     id: 3,
-    name: "Weather App",
-    description: "A simple app to display real-time weather information using OpenWeather API.",
-    image: "/assets/weather-app.jpg",
-    githubLink: "https://github.com/your-username/weather-app",
-    tags: ["Mobile Apps"],
+    name: "Blacktag",
+    description:
+      "Designed and developed an e-commerce website using HTML, CSS, JavaScript, and APIs. Implemented dynamic functionality for a seamless user experience.",
+    technologies: ["HTML", "CSS", "JavaScript", "APIs"],
+    image:"",
+    githubLink: "https://smyyhzai.github.io/ID_blacktag_Website/index.html",
+    tags: ["Web Development", "E-Commerce"],
   },
   {
     id: 4,
-    name: "Stock Price Predictor",
-    description: "A machine learning model to predict stock prices using historical data.",
-    image: "/assets/stock-predictor.jpg",
-    githubLink: "https://github.com/your-username/stock-price-predictor",
-    tags: ["Machine Learning"],
+    name: "Expense Tracker",
+    description:
+      "Developed a personalized Monthly Expense Tracker using Microsoft Excel. Integrated dropdown menus, charts, and automated calculations for budgeting.",
+    technologies: ["Microsoft Excel"],
+    image:"",
+    githubLink: "https://docs.google.com/spreadsheets/d/1gqsZkwWjw5JaK_Y8QwsuYg05Ni9S4OZy/edit?usp=sharing&ouid=102061921029976045401&rtpof=true&sd=true",
+    tags: ["Finance", "Automation", "Excel"],
   },
   {
     id: 5,
-    name: "RPA Automation",
-    description: "Automated invoice processing using Robotic Process Automation (RPA).",
-    image: "/assets/rpa.jpg",
-    githubLink: "https://github.com/your-username/rpa-automation",
-    tags: ["RPA"],
+    name: "GPA Calculator",
+    description:
+      "Created a GPA Calculator in Excel to help students calculate their GPA. Designed formulas, error-checking mechanisms, and user-friendly interfaces.",
+    technologies: ["Microsoft Excel"],
+    image:"",
+    githubLink: "https://docs.google.com/spreadsheets/d/1fVEA-7P26Et5SzV413N758VSJ3RE3qUY/edit?usp=sharing&ouid=114436406465873239309&rtpof=true&sd=true",
+    tags: ["Education", "Excel", "Automation"],
+  },
+  {
+    id: 6,
+    name: "Machine Learning Models",
+    description:
+      "Developed ensemble models to predict employee promotions and Airbnb prices. Achieved over 85% accuracy on both models.",
+    technologies: ["Machine Learning"],
+    image:"",
+    githubLink: "https://github.com/gwndolyn/Machine-Learning-Assignment",
+    tags: ["Machine Learning", "Data Science", "Prediction"],
+  },
+  {
+    id: 7,
+    name: "Natural Language Processing",
+    description:
+      "Used NLP and Text Analysis to extract keywords from BBC documents and predict categories using association rule mining.",
+    technologies: ["Natural Language Processing"],
+    image:"",
+    githubLink: "https://github.com/gwndolyn/Applied-analytics-project",
+    tags: ["Natural Language Processing", "Text Analysis", "Machine Learning"],
+  },
+  {
+    id: 8,
+    name: "Robotic Process Automation",
+    description:
+      "Developed automation using UIPath for Vestas Wind Co to scrape financial data, calculate matrices, generate visualizations, and send email reports.",
+    technologies: ["RPA", "UIPath"],
+    image:"",
+    githubLink: "https://github.com/gwndolyn/RPA-uipath-assignment",
+    tags: ["RPA", "Automation", "Data Visualization"],
+  },
+  {
+    id: 9,
+    name: "ZZ Fashion CRM",
+    description:
+      "Built a robust CRM website using ASP.NET Core MVC. Integrated features for customer data management, secure authentication, and CRUD operations.",
+    technologies: ["C#", "ASP.NET Core MVC"],
+    image:"",
+    githubLink: "https://bitbucket.org/kamiislu/web2022apr_p02_t3/src/master/",
+    tags: ["Web Development", "CRM", "C#"],
   },
 ];
+
 
 
 export const certificationsData = [
