@@ -52,7 +52,7 @@ const Navbar = () => {
       <nav className="fixed left-0 right-0 top-4 z-50">
         {/* Desktop Menu */}
         <div className="mx-auto hidden max-w-2xl items-center justify-center rounded-lg border border-stone-50/30 bg-black/20 py-3 backdrop-blur-lg lg:flex">
-          <div className="flex items-center justify-between gap-6">
+          <div className="flex items-center gap-6">
             <div>
               <a href="#home" onClick={(e) => handleLinkClick(e, "#home")}>
                 <img src={logo} width={70} alt="logo" className="logo" />
@@ -122,20 +122,33 @@ const Navbar = () => {
                     </a>
                   </motion.li>
                 ))}
+                {/* Profile Icon for Mobile */}
+                <motion.li
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="text-sm text-white hover:text-pink-400 cursor-pointer flex items-center gap-2"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    navigate("/login");
+                  }}
+                >
+                  <FaRegUser />
+                  <span>Profile</span>
+                </motion.li>
               </ul>
             </motion.div>
           )}
         </div>
       </nav>
 
-      {/* Profile Icon */}
+      {/* Profile Icon Outside Navbar for Desktop */}
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed right-6 top-4 z-50 cursor-pointer text-white"
-        onClick={() => navigate("/login")} // Navigate to the sign-in page
+        className="fixed right-6 top-4 z-50 cursor-pointer text-white hidden lg:block mt-5"
+        onClick={() => navigate("/login")} // Navigate to login page
       >
-        <FaRegUser className="text-2xl mt-5" />
+        <FaRegUser className="text-2xl" />
       </motion.div>
     </div>
   );
