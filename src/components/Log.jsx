@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { signInWithEmailAndPassword } from "firebase/auth"; // Firebase auth import
+import { auth } from "../firebase-config"; // Your Firebase configuration file
+import { useNavigate } from "react-router-dom"; // React Router for navigation
 
 const Log = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [error, setError] = useState(null); // State to store error messages
+  const navigate = useNavigate(); // Hook for navigating between routes
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,16 +20,31 @@ const Log = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log("Logging in with:", formData);
+    setError(null); // Clear any existing errors
+    try {
+      // Authenticate the user with Firebase
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+      console.log("Logged in:", userCredential.user);
+
+      // Redirect to home page upon successful login
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+      // Display error message if login fails
+      setError("Invalid email or password. Please try again.");
+    }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center">
       <motion.div
-        className="w-full max-w-md rounded-lg shadow-lg p-8  bg-black/30 backdrop-blur-lg"
+        className="w-full max-w-md rounded-lg shadow-lg p-8 bg-black/30 backdrop-blur-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -67,6 +87,8 @@ const Log = () => {
               className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-pink-300"
             />
           </div>
+          {/* Error Message */}
+          {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
           {/* Submit Button */}
           <button
             type="submit"
