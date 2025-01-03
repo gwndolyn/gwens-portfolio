@@ -167,7 +167,6 @@ const App = () => {
                   transition={{ duration: 1 }}
                 >
                   <LogHome />
-                  <Contact />
                 </motion.div>
               }
             />   
