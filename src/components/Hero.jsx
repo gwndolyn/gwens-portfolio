@@ -71,7 +71,7 @@ const Hero = () => {
 
   return (
     <section className="relative flex flex-col md:flex-row min-h-screen items-center" id="home" style={{ height: "100vh" }}>
-      <div className="w-full md:w-1/2 relative z-10 mt-20 lg:-mt-10">
+      <div className="w-full md:w-1/2 relative z-10 mt-40 lg:-mt-10">
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -149,8 +149,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 h-[500px] relative z-10 flex justify-center items-center">
-        <ComputersCanvas />
+      <div className="w-full md:w-1/2 h-[300px] lg:h-[500px] relative z-10 flex justify-center items-center">
+    <ComputersCanvas />
 
         {visible && (
           <motion.div

@@ -11,6 +11,7 @@ import Contact from "./components/Contact";
 import Certifications from "./components/Certifications";
 import Volunteering from "./components/Volunteering";
 import Log from "./components/Log";
+import LogHome from "./components/LogHome";
 import ErrorPage from "./components/ErrorPage"; // Import the ErrorPage component
 
 const App = () => {
@@ -138,7 +139,7 @@ const App = () => {
                 </motion.div>
               }
             />
-            {/* Route for Projects */}
+            {/* Route for Login */}
             <Route
               path="/login"
               element={
@@ -153,6 +154,22 @@ const App = () => {
                 </motion.div>
               }
             />            
+
+            {/* Route for Log home */}
+            <Route
+              path="/home"
+              element={
+                <motion.div
+                  className="relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  <LogHome />
+                </motion.div>
+              }
+            />   
 
             {/* Catch-all Route for 404 - Page Not Found */}
             <Route path="*" element={<ErrorPage />} />
