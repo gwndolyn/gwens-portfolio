@@ -4,6 +4,11 @@ import { SiTypescript } from "react-icons/si"; // TypeScript
 import { CgCPlusPlus } from "react-icons/cg"; // C++
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi"; // Excel
 import { SiSpringboot } from "react-icons/si"; // SpringBoot
+import { SiFirebase } from "react-icons/si"; // Firebase
+import { SiTailwindcss } from "react-icons/si"; //Tailwind
+import { SiSwagger } from "react-icons/si"; //Swagger
+import { AiOutlineDotNet } from "react-icons/ai"; //asp
+import { TbBrandCSharp } from "react-icons/tb"; //c#
 import { motion } from "framer-motion";
 
 // Icon floating animation
@@ -22,7 +27,7 @@ const iconVariants = (duration) => ({
 
 const Skills = () => {
   const technologies = [
-    "FullStack Dev", "Machine Learning", "LLM", "Robotic Process Automation", "Salesforce CRM", "Cloud Computing", "Software Engineering", "Object-Oriented Programming", "Databases", // Repeat as many times as needed
+    "FullStack Dev", "Machine Learning", "LLM", "Robotic Process Automation", "Salesforce CRM", "Cloud Computing", "Software Engineering", "Data Engineering", "AI Engineering", "Object-Oriented Programming", "Databases", "CI/CD", "DevOps", "API" // Repeat as many times as needed
   ];
   
   return (
@@ -74,7 +79,7 @@ const Skills = () => {
               className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
               style={{ filter: "grayscale(100%)" }} // Initially in grayscale
             >
-              <FaCode className="text-5xl text-gray-500 lg:text-6xl" />
+              <TbBrandCSharp className="text-5xl text-purple-700 lg:text-6xl" />
             </motion.div>
             <p className="text-center mt-4">C#</p>
           </div>
@@ -133,6 +138,42 @@ const Skills = () => {
             <p className="text-center mt-4">TypeScript</p>
           </div>
 
+          {/* Tailwind */}
+          <div className="flex flex-col items-center">
+            <motion.div
+              variants={iconVariants(2.7)} // floating effect
+              initial="initial"
+              animate="animate"
+              whileHover={{
+                scale: 1.2,
+                filter: "grayscale(0%) brightness(1.5)",
+              }} // Light up and remove grayscale on hover
+              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
+              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
+            >
+              <SiTailwindcss className="text-5xl text-blue-500 lg:text-6xl" />
+            </motion.div>
+            <p className="text-center mt-4">Tailwind</p>
+          </div>
+
+          {/* Swagger */}
+          <div className="flex flex-col items-center">
+            <motion.div
+              variants={iconVariants(2.7)} // floating effect
+              initial="initial"
+              animate="animate"
+              whileHover={{
+                scale: 1.2,
+                filter: "grayscale(0%) brightness(1.5)",
+              }} // Light up and remove grayscale on hover
+              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
+              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
+            >
+              <SiSwagger className="text-5xl text-green-500 lg:text-6xl" />
+            </motion.div>
+            <p className="text-center mt-4">Swagger UI</p>
+          </div>
+
           {/* JavaScript */}
           <div className="flex flex-col items-center">
             <motion.div
@@ -185,6 +226,24 @@ const Skills = () => {
               <SiSpringboot className="text-5xl text-green-700 lg:text-6xl" />
             </motion.div>
             <p className="text-center mt-4">SpringBoot</p>
+          </div>
+
+          {/* ASP */}
+          <div className="flex flex-col items-center">
+            <motion.div
+              variants={iconVariants(3.1)} // floating effect
+              initial="initial"
+              animate="animate"
+              whileHover={{
+                scale: 1.2,
+                filter: "grayscale(0%) brightness(1.5)",
+              }} // Light up and remove grayscale on hover
+              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
+              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
+            >
+              <AiOutlineDotNet className="text-5xl text-purple-700 lg:text-6xl" />
+            </motion.div>
+            <p className="text-center mt-4">ASP.NET CORE</p>
           </div>
 
           {/* Excel */}
@@ -240,6 +299,25 @@ const Skills = () => {
             </motion.div>
             <p className="text-center mt-4">AWS</p>
           </div>
+
+          {/* Firebase */}
+          <div className="flex flex-col items-center">
+            <motion.div
+              variants={iconVariants(3.7)} // floating effect
+              initial="initial"
+              animate="animate"
+              whileHover={{
+                scale: 1.2,
+                filter: "grayscale(0%) brightness(1.5)",
+              }} // Light up and remove grayscale on hover
+              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
+              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
+            >
+              <SiFirebase className="text-5xl text-orange-500 lg:text-6xl" />
+            </motion.div>
+            <p className="text-center mt-4">Firebase</p>
+          </div>
+
         </motion.div>
         <div className="flex flex-wrap gap-2 justify-center mt-4">
           <motion.div

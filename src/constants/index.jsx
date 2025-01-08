@@ -7,12 +7,6 @@ import {
 
 import { MdEmail } from "react-icons/md";
 
-import projectImage1 from "../assets/bdaybuddy.jpeg";
-import projectImage2 from "../assets/weatherforecast.jpeg";
-import projectImage3 from "../assets/website.jpeg";
-import projectImage4 from "../assets/mbot.png";
-import projectImage5 from "../assets/alex.png";
-
 import cert1 from "../assets/certs png/AWS Cloud Solutions-1.png";
 import cert2 from "../assets/certs png/AWS Fundamentals-1.png";
 import cert3 from "../assets/certs png/brainhack.png";
@@ -94,7 +88,7 @@ export const EXPERIENCES = [
     role: "Data Engineer",
     company: "Luxoft",
     description: ``,
-    technologies: ["Big Data", "Financial Markets", "Data Architecture"],
+    technologies: ["Big Data", "Financial Markets", "Data Architecture", "Apache Spark", "Docker", "Hadoop"],
   },
   {
     year: "Mar 2024 - Present",
@@ -108,7 +102,7 @@ export const EXPERIENCES = [
     role: "Software Developer",
     company: "OCBC",
     description: ``,
-    technologies: ["ReactJS", "SpringBoot", "WSO2", "Swagger UI"],
+    technologies: ["ReactJS", "Typescript", "Tailwind CSS", "SpringBoot", "WSO2", "Swagger UI", "SQL", "UAT Deployment", "CI/CD Automation"],
   },
 ];
 

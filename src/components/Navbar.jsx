@@ -35,7 +35,7 @@ const Navbar = () => {
   const scrollToSection = (href) => {
     const targetElement = document.querySelector(href);
     if (targetElement) {
-      const offset = -25;
+      const offset = -15;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY + offset;
 
