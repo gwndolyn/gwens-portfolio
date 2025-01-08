@@ -101,7 +101,7 @@ const Navbar = () => {
 
           {isMobileMenuOpen && (
             <motion.div
-              className="absolute left-0 top-16 w-full rounded-lg bg-black/40 backdrop-blur-md z-50 p-4"
+              className="absolute left-0 top-16 w-full rounded-lg bg-black/60 backdrop-blur z-50 p-4"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -124,8 +124,7 @@ const Navbar = () => {
                 ))}
                 {/* Profile Icon for Mobile */}
                 <motion.li
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+
                   className="text-sm text-white hover:text-pink-400 cursor-pointer flex items-center gap-2"
                   onClick={() => {
                     setIsMobileMenuOpen(false);

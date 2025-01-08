@@ -166,7 +166,7 @@ const Certifications = () => {
         {/* Mobile Sidebar Toggle Button */}
         <div className="lg:hidden fixed bottom-4 left-4 z-40">
           <button
-            className="p-4 bg-pink-500 text-white rounded-full flex items-center justify-center shadow-lg"
+            className="p-4 bg-pink-400 text-white rounded-full flex items-center justify-center shadow-lg"
             onClick={toggleSidebar}
           >
             <svg
