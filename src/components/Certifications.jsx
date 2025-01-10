@@ -4,6 +4,7 @@ import { certificationsData } from "../constants"; // Import certifications data
 
 const Certifications = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to toggle sidebar visibility on mobile
+  const [selectedCert, setSelectedCert] = useState(null); // State for the selected certificate
 
   // Ensure the page scrolls to the top when the component is mounted
   useEffect(() => {
@@ -77,8 +78,12 @@ const Certifications = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="border-l-4 border-pink-400 pl-4">
-              <h3 className="font-bold text-xl mb-6 hover:text-pink-400"
-              onClick={handleScrollToTop}>Certifications</h3>
+              <h3
+                className="font-bold text-xl mb-6 hover:text-pink-400"
+                onClick={handleScrollToTop}
+              >
+                Certifications
+              </h3>
               {certificationsData.map((category, idx) => (
                 <p
                   key={idx}
@@ -114,6 +119,7 @@ const Certifications = () => {
                       className="relative group overflow-hidden rounded-lg"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
+                      onClick={() => setSelectedCert(cert)} // Set selected certificate
                     >
                       <img
                         src={cert.image}
@@ -134,6 +140,37 @@ const Certifications = () => {
           </div>
         </div>
 
+        {/* Modal for enlarged view */}
+        {selectedCert && (
+          <motion.div
+            className="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-80"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedCert(null)} // Close modal on backdrop click
+          >
+            <div
+              className="relative  p-6 rounded-lg max-w-3xl max-h-[80vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+            >
+              <button
+                className="absolute top-4 right-4 bg-red-500 text-white font-extrabold p-2 rounded"
+                onClick={() => setSelectedCert(null)} // Close modal on button click
+              >
+                X
+              </button>
+              <img
+                src={selectedCert.image}
+                alt={selectedCert.name}
+                className="w-full h-auto rounded-lg"
+              />
+              <p className="text-center mt-4 text-lg font-semibold">
+                {selectedCert.name}
+              </p>
+            </div>
+          </motion.div>
+        )}
+
         {/* Mobile Sidebar */}
         {isSidebarOpen && (
           <div
@@ -147,8 +184,12 @@ const Certifications = () => {
           } lg:hidden`}
         >
           <div className="border-l-4 border-pink-400 pl-4 mt-20">
-            <h3 className="font-bold text-xl mb-6 hover:text-pink-400"
-              onClick={handleScrollToTop}>Certifications</h3>
+            <h3
+              className="font-bold text-xl mb-6 hover:text-pink-400"
+              onClick={handleScrollToTop}
+            >
+              Certifications
+            </h3>
             {certificationsData.map((category, idx) => (
               <p
                 key={idx}
