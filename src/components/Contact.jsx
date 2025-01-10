@@ -55,8 +55,9 @@ const Contact = () => {
 
       {/* Copyright Section */}
       <p className="mt-2 text-center text-sm tracking-wide text-gray-400">
-        &copy;Gwendolyn. All rights reserved.
+        &copy;{new Date().getFullYear()}, Gwendolyn. All rights reserved.
       </p>
+        
     </div>
   );
 };
