@@ -69,20 +69,7 @@ export const ABOUT = [
 ];
 
 export const EXPERIENCES = [
-  {
-    year: "Aug 2024 - Jan 2025",
-    role: "Web Tech Associate",
-    company: "SMU Patron's Day",
-    description: ``,
-    technologies: ["Figma"],
-  },
-  {
-    year: "Sep 2024 - Oct 2024",
-    role: "Student Assistant",
-    company: "SMU Office of Research",
-    description: ``,
-    technologies: ["Excel", "Data Analysis"],
-  },
+
   {
     year: "Jun 2024 - Jun 2025",
     role: "Data Engineer",
@@ -98,8 +85,22 @@ export const EXPERIENCES = [
     technologies: ["Python"],
   },
   {
+    year: "Aug 2024 - Jan 2025",
+    role: "Web Tech Associate",
+    company: "SMU Patron's Day",
+    description: ``,
+    technologies: ["Figma"],
+  },
+  {
+    year: "Sep 2024 - Oct 2024",
+    role: "Student Assistant",
+    company: "SMU Office of Research",
+    description: ``,
+    technologies: ["Excel", "Data Analysis"],
+  },
+  {
     year: "Mar 2023 - Mar 2024",
-    role: "Software Developer",
+    role: "Software Engineer",
     company: "OCBC",
     description: ``,
     technologies: ["ReactJS", "Typescript", "Tailwind CSS", "SpringBoot", "WSO2", "Swagger UI", "SQL", "UAT Deployment", "CI/CD Automation"],
