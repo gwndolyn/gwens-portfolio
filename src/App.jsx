@@ -82,9 +82,9 @@ const App = () => {
                   transition={{ duration: 1 }}
                 >
                   <Hero />
-                  <Github />
                   <About />
                   <Skills />
+                  <Github />
                   <Qualifications />
                   <Contact />
                 </motion.div>
