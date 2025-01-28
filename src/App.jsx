@@ -10,6 +10,7 @@ import Qualifications from "./components/Qualifications";
 import Contact from "./components/Contact";
 import Certifications from "./components/Certifications";
 import Volunteering from "./components/Volunteering";
+import Github from "./components/Github";
 import Log from "./components/Log";
 import LogHome from "./components/LogHome";
 import ErrorPage from "./components/ErrorPage"; // Import the ErrorPage component
@@ -81,6 +82,7 @@ const App = () => {
                   transition={{ duration: 1 }}
                 >
                   <Hero />
+                  <Github />
                   <About />
                   <Skills />
                   <Qualifications />
