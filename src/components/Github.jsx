@@ -17,8 +17,11 @@ const Github = () => {
 
   return (
     <div className="w-full p-4">
-      {/* Outer Container for the MacBook-like tab */}
-      <div className="bg-black text-white rounded-lg p-7 w-full shadow-lg">
+      {/* Outer Container with Pink Glow */}
+      <div className="relative bg-black text-white rounded-lg p-7 w-full shadow-lg">
+        {/* Pink Glow */}
+        <div className="absolute inset-0 rounded-lg bg-pink-500 opacity-20 blur-3xl -z-10"></div>
+
         {/* MacBook Top Bar */}
         <div className="flex items-center justify-between mb-4">
           {/* Left: Colored Circles */}
