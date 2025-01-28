@@ -71,7 +71,7 @@ const Github = () => {
 
           {/* Right Section: GitHub Contributions Graph */}
           <div className="flex-grow">
-          <iframe frameBorder="0" className="w-full" height="145px" width="638px" src="https://git-graph.vercel.app/embed/gwndolyn?showColorLegend=true&showWeekdayLabels=true&showMonthLabels=true&showTotalCount=true&blockMargin=2&blockRadius=2&blockSize=9&fontSize=12&weekStart=0&year=2025"></iframe>
+          <iframe frameBorder="0" className="w-full h-35" height="145px" width="638px" src="https://git-graph.vercel.app/embed/gwndolyn?showColorLegend=true&showWeekdayLabels=true&showMonthLabels=true&showTotalCount=true&blockMargin=2&blockRadius=2&blockSize=9&fontSize=12&weekStart=0&year=2025"></iframe>
           </div>
         </div>
 
