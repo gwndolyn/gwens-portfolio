@@ -10,6 +10,7 @@ const Github = () => {
     "“Code is like humor. When you have to explain it, it’s bad.” – Cory House",
     "“Simplicity is the soul of efficiency.” – Austin Freeman",
     "“Fix the cause, not the symptom.” – Steve Maguire",
+    "“A programming language is low level when its programs require attention to the irrelevant.”  - Alan Perlis"
   ];
 
   // Get today's quote based on the day of the year
@@ -31,7 +32,7 @@ const Github = () => {
         className="relative bg-black text-white rounded-lg p-7 w-full shadow-lg"
       >
         {/* Pink Glow */}
-        <div className="absolute inset-0 rounded-lg bg-pink-500 opacity-20 blur-3xl -z-10"></div>
+        <div className="absolute inset-0 rounded-lg bg-pink-400 opacity-30 blur-3xl -z-10"></div>
 
         {/* MacBook Top Bar (Fades In) */}
         <motion.div 
