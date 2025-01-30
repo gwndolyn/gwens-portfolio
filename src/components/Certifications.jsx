@@ -77,9 +77,9 @@ const Certifications = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="border-l-4 border-pink-400 pl-4">
+            <div className="border-l-4 border-pink-300 pl-4">
               <h3
-                className="font-bold text-xl mb-6 hover:text-pink-400"
+                className="font-bold text-xl mb-6 hover:text-pink-300"
                 onClick={handleScrollToTop}
               >
                 Certifications
@@ -87,7 +87,7 @@ const Certifications = () => {
               {certificationsData.map((category, idx) => (
                 <p
                   key={idx}
-                  className="cursor-pointer mb-4 hover:text-pink-400"
+                  className="cursor-pointer mb-4 hover:text-pink-300"
                   onClick={() =>
                     handleCategoryClick(category.category.replace(/\s+/g, ""))
                   } // Click to scroll to section
@@ -99,7 +99,7 @@ const Certifications = () => {
           </motion.div>
 
           {/* Content */}
-          <div className="lg:w-3/4 lg:ml-[25%] space-y-8 p-4 lg:p-8">
+          <div className="lg:w-3/4 lg:ml-[25%] space-y-8 p-4">
             {certificationsData.map((category, idx) => (
               <motion.div
                 key={idx}
@@ -110,13 +110,13 @@ const Certifications = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold">{category.category}</h3>
+                <h3 className="text-2xl font-semibold pt-8 pb-4">{category.category}</h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.certs.map((cert, index) => (
                     <motion.div
                       key={index}
-                      className="relative group overflow-hidden rounded-lg"
+                      className="relative group overflow-hidden rounded-md"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                       onClick={() => setSelectedCert(cert)} // Set selected certificate
@@ -124,7 +124,7 @@ const Certifications = () => {
                       <img
                         src={cert.image}
                         alt={cert.name}
-                        className="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-110"
+                        className="w-full h-full object-contain rounded-md transition-transform duration-300 group-hover:scale-110"
                       />
 
                       <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-60 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -150,7 +150,7 @@ const Certifications = () => {
             onClick={() => setSelectedCert(null)} // Close modal on backdrop click
           >
             <div
-              className="relative  p-6 rounded-lg max-w-3xl max-h-[80vh] overflow-y-auto"
+              className="relative  p-6 rounded-md max-w-3xl max-h-[80vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
             >
               <button
@@ -179,13 +179,13 @@ const Certifications = () => {
           />
         )}
         <motion.div
-          className={`fixed top-0 left-0 h-full bg-black/40 bg-opacity-70 p-6 text-neutral-400 text-sm z-30 w-64 transform transition-transform duration-300 ${
+          className={`fixed top-0 left-0 h-full bg-black/40 bg-opacity-70 p-6 text-white text-sm z-30 w-64 transform transition-transform duration-300 ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } lg:hidden`}
         >
-          <div className="border-l-4 border-pink-400 pl-4 mt-20">
+          <div className="border-l-4 border-pink-300 pl-4 mt-20">
             <h3
-              className="font-bold text-xl mb-6 hover:text-pink-400"
+              className="font-bold text-xl mb-6 hover:text-pink-300"
               onClick={handleScrollToTop}
             >
               Certifications
@@ -193,7 +193,7 @@ const Certifications = () => {
             {certificationsData.map((category, idx) => (
               <p
                 key={idx}
-                className="cursor-pointer mb-4 hover:text-pink-400"
+                className="cursor-pointer mb-4 hover:text-pink-300"
                 onClick={() =>
                   handleCategoryClick(category.category.replace(/\s+/g, ""))
                 }
@@ -207,7 +207,7 @@ const Certifications = () => {
         {/* Mobile Sidebar Toggle Button */}
         <div className="lg:hidden fixed bottom-4 left-4 z-40">
           <button
-            className="p-4 bg-pink-400 text-white rounded-full flex items-center justify-center shadow-lg"
+            className="p-4 bg-pink-300 text-white rounded-full flex items-center justify-center shadow-lg"
             onClick={toggleSidebar}
           >
             <svg
