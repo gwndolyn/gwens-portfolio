@@ -68,7 +68,7 @@ const Github = () => {
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 1, y: 50 }}
       transition={{ duration: 0.8 }}
-      className="w-full p-4"
+      className="w-[360px] lg:w-[1000px] flex-shrink-0 p-4" 
     >
       {/* Outer Container with Pink Glow */}
       <motion.div 
