@@ -6,6 +6,7 @@ import { FaHandPointUp } from "react-icons/fa"; // Importing hand icon
 import { motion } from "framer-motion";
 import ComputersCanvas from "./Computers";
 
+
 const Hero = () => {
   const [visible, setVisible] = useState(true); // State for visibility
   const [typingText, setTypingText] = useState(""); // State for typed text
@@ -90,6 +91,7 @@ const Hero = () => {
           className="p-2 text-3xl tracking-tighter lg:text-4xl"
         >
           {HERO.greet} 
+        
         </motion.p>
 
         <motion.p
