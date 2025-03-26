@@ -1,5 +1,7 @@
 import { SOCIAL_MEDIA_LINKS } from "../constants"
 import { motion } from "framer-motion"
+import Social from "./Social";
+
 
 const Contact = () => {
   return (

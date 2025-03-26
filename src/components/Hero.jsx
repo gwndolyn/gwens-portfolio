@@ -5,6 +5,7 @@ import { HiArrowDown } from "react-icons/hi";
 import { FaHandPointUp } from "react-icons/fa"; // Importing hand icon
 import { motion } from "framer-motion";
 import ComputersCanvas from "./Computers";
+import Social from "./Social";
 
 
 const Hero = () => {
@@ -78,7 +79,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
-          className="my-8 p-2 text-4xl font-bold md:text-5xl lg:text-[5rem]"
+          className="mt-8 mb-4 p-2 text-5xl font-bold md:text-5xl lg:text-[5rem]"
         >
           {typingText}
         </motion.h2>
@@ -101,6 +102,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="mb-8 p-2 text-xl"
         >
+          <Social />
           I am a{" "}
           <span className="text-pink-400 font-bold">Software Engineer</span>{" "}
           passionate about using technology to solve real-world problems.
