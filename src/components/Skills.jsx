@@ -9,6 +9,7 @@ import { SiTailwindcss } from "react-icons/si"; //Tailwind
 import { SiSwagger } from "react-icons/si"; //Swagger
 import { AiOutlineDotNet } from "react-icons/ai"; //asp
 import { TbBrandCSharp } from "react-icons/tb"; //c#
+import { SiPhp } from "react-icons/si"; //php
 import { motion } from "framer-motion";
 
 // Icon floating animation
@@ -316,6 +317,24 @@ const Skills = () => {
               <SiFirebase className="text-5xl text-orange-500 lg:text-6xl" />
             </motion.div>
             <p className="text-center mt-4">Firebase</p>
+          </div>
+
+          {/* PHP */}
+          <div className="flex flex-col items-center">
+            <motion.div
+              variants={iconVariants(3.7)} // floating effect
+              initial="initial"
+              animate="animate"
+              whileHover={{
+                scale: 1.2,
+                filter: "grayscale(0%) brightness(1.5)",
+              }} // Light up and remove grayscale on hover
+              className="flex items-center justify-center rounded-2xl border-4 border-neutral-800 p-4"
+              style={{ filter: "grayscale(100%)" }} // Initially in grayscale
+            >
+              <SiPhp className="text-5xl text-blue-500 lg:text-6xl" />
+            </motion.div>
+            <p className="text-center mt-4">PHP</p>
           </div>
 
         </motion.div>
