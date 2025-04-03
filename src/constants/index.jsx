@@ -47,6 +47,12 @@ import v8 from "../assets/volunteer/8.jpg";
 import v9 from "../assets/volunteer/ocbc.jpg";
 import v10 from "../assets/volunteer/9.jpg";
 
+import cys from "../assets/qualifications/CYS.png";
+import ocbc from "../assets/qualifications/OCBC.png";
+import smu from "../assets/qualifications/SMU.png";
+import luxoft from "../assets/qualifications/Luxoft.png";
+import logic from "../assets/qualifications/logic.jpg";
+
 
 export const NAVIGATION_LINKS = [
   { label: "Skills", href: "#skills" },
@@ -69,11 +75,27 @@ export const ABOUT = [
 ];
 
 export const EXPERIENCES = [
-
+  {
+    year: "Mar 2025 - Present",
+    role: "Tech Division ",
+    company: "Cyber Youth Singapore",
+    logo: cys,
+    description: ``,
+    technologies: [],
+  },  
+  {
+    year: "Apr 2024 - Present",
+    role: "UI/UX Designer",
+    company: "SMU Dato Kho Hui Meng Career Centre",
+    logo: smu,
+    description: ``,
+    technologies: ["Figma", "UI/UX Design"],
+  },
   {
     year: "Jun 2024 - Jun 2025",
     role: "Data Engineer",
     company: "Luxoft",
+    logo: luxoft,
     description: ``,
     technologies: ["Big Data", "Financial Markets", "Data Architecture", "Apache Spark", "Docker", "Hadoop"],
   },
@@ -81,6 +103,7 @@ export const EXPERIENCES = [
     year: "Mar 2024 - Present",
     role: "Python Tutor",
     company: "The Logic Coders",
+    logo: logic,
     description: ``,
     technologies: ["Python"],
   },
@@ -88,13 +111,15 @@ export const EXPERIENCES = [
     year: "Aug 2024 - Jan 2025",
     role: "Web Tech Associate",
     company: "SMU Patron's Day",
+    logo: smu,
     description: ``,
     technologies: ["Figma"],
   },
   {
     year: "Sep 2024 - Oct 2024",
-    role: "Student Assistant",
+    role: "Data Analyst",
     company: "SMU Office of Research",
+    logo: smu,
     description: ``,
     technologies: ["Excel", "Data Analysis"],
   },
@@ -102,6 +127,7 @@ export const EXPERIENCES = [
     year: "Mar 2023 - Mar 2024",
     role: "Software Engineer",
     company: "OCBC",
+    logo: ocbc,
     description: ``,
     technologies: ["ReactJS", "Typescript", "Tailwind CSS", "SpringBoot", "WSO2", "Swagger UI", "SQL", "UAT Deployment", "CI/CD Automation"],
   },
