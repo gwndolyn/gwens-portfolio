@@ -71,6 +71,19 @@ const Hero = () => {
     );
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  handleResize(); // check once on mount
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
+
   return (
     <section className="relative flex flex-col md:flex-row min-h-screen items-center" id="home" style={{ height: "100vh" }}>
       <div className="w-full md:w-1/2 relative z-10 mt-40 lg:-mt-10">
@@ -154,9 +167,11 @@ const Hero = () => {
       </div>
 
       <div className="w-full md:w-1/2 h-[300px] lg:h-[500px] relative z-10 flex justify-center items-center">
-    <ComputersCanvas />
+      {!isMobile && <ComputersCanvas />}
 
-        {visible && (
+
+
+        {!isMobile && visible && (
           <motion.div
             className="absolute xs:bottom-10 bottom-5 w-full flex flex-col items-center fade-out"
             initial={{ opacity: 0 }}
