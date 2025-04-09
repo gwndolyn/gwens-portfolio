@@ -85,7 +85,7 @@ useEffect(() => {
 
 
   return (
-    <section className="relative flex flex-col md:flex-row min-h-screen items-center" id="home" style={{ height: "100vh" }}>
+    <section className="relative flex flex-col md:flex-row min-h-screen items-center mt-[-30px] md:mt-0" id="home" style={{ height: "100vh" }}>
       <div className="w-full md:w-1/2 relative z-10 mt-40 lg:-mt-10">
         <motion.h2
           initial={{ opacity: 0 }}
