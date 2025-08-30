@@ -10,7 +10,7 @@ const Github = () => {
     const fetchContributions = async () => {
       const query = `
         {
-          user(login: "gwndolyn") {
+          user(login: "gwxndolyn") {
             contributionsCollection(from: "2020-01-01T00:00:00Z") {
               contributionCalendar {
                 totalContributions
@@ -116,13 +116,13 @@ const Github = () => {
           >
             {/* GitHub Logo and Username Link */}
             <a
-              href="https://github.com/gwndolyn"
+              href="https://github.com/gwxndolyn"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-xl mb-4 font-mono font-extrabold hover:text-gray-300 transition duration-200"
             >
               <FaGithub className="text-2xl mr-2" />
-              <span> / gwndolyn</span>
+              <span> / gwxndolyn</span>
             </a>
 
             {/* GitHub Stats */}
@@ -134,7 +134,7 @@ const Github = () => {
                 <FaCodeBranch className="text-pink-500" /> Forks: 8
               </li>
               <li className="flex items-center gap-2">
-                <FaCodeCommit className="text-orange-500" /> Total Contributions: 55
+                <FaCodeCommit className="text-orange-500" /> Total Contributions: 201
               </li>
 
               {/* <li className="flex items-center gap-2">
@@ -153,7 +153,7 @@ const Github = () => {
             <iframe
               frameBorder="0"
               className="w-full lg:h-[145px] h-[170px]"
-              src="https://git-graph.vercel.app/embed/gwndolyn?showColorLegend=true&showWeekdayLabels=true&showMonthLabels=true&showTotalCount=true&blockMargin=2&blockRadius=2&blockSize=9&fontSize=12&weekStart=0&year=2025"
+              src="https://git-graph.vercel.app/embed/gwxndolyn?showColorLegend=true&showWeekdayLabels=true&showMonthLabels=true&showTotalCount=true&blockMargin=2&blockRadius=2&blockSize=9&fontSize=12&weekStart=0&year=2025"
               title="GitHub Contribution Graph"
             ></iframe>
           </motion.div>

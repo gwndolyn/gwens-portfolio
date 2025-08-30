@@ -76,9 +76,17 @@ export const ABOUT = [
 
 export const EXPERIENCES = [
   {
+    year: "May 2025 - Aug 2025",
+    role: "Software & Analytics Engineer Intern",
+    company: "HeyMax",
+    logo:``,
+    description: ``,
+    technologies: ["Python", "SQL", "DBT", "GCP", "n8n"],
+  },  
+  {
     year: "Mar 2025 - Present",
-    role: "Tech Division ",
-    company: "Cyber Youth Singapore",
+    role: "Tech Division Associate, Technical Product Manager",
+    company: "YouthTechSG",
     logo: cys,
     description: ``,
     technologies: [],
@@ -93,7 +101,7 @@ export const EXPERIENCES = [
   },
   {
     year: "Jun 2024 - Jun 2025",
-    role: "Data Engineer",
+    role: "Data Engineer Intern",
     company: "Luxoft",
     logo: luxoft,
     description: ``,
@@ -125,7 +133,7 @@ export const EXPERIENCES = [
   },
   {
     year: "Mar 2023 - Mar 2024",
-    role: "Software Engineer",
+    role: "Software Engineer Intern",
     company: "OCBC",
     logo: ocbc,
     description: ``,
@@ -139,8 +147,11 @@ export const EDUCATION = [
     institution: "Singapore Management University",
     duration: "2024 - 2028",
     description: [
-      "Web Tech Associate for SMU Patron's Day 2025",
-      "Student Assistant for SMU Office of Research",
+      "Data Analyst for SMU Office of Research, 2024",
+      "UI/UX Designer for SMU Dato Kho Hui Meng Career Centre, 2024",
+      "Web Tech Associate for SMU Patron's Day, 2025",
+      "Facilitator for SMU Freshmen Orientation Programme, 2025",
+      "Web Tech Director for SMU Patron's Day 2026,",
     ],
   },
   {
@@ -501,7 +512,7 @@ export const SOCIAL_MEDIA_LINKS = [
     icon: <FaInstagram fontSize={25} className="hover:opacity-80" />,
   },
   {
-    href: "https://github.com/gwndolyn/",
+    href: "https://github.com/gwxndolyn/",
     icon: <FaGithub fontSize={25} className="hover:opacity-80" />,
   },
   {
