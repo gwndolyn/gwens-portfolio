@@ -66,7 +66,7 @@ const Hero = () => {
 
   const handleResumeClick = () => {
     window.open(
-      "https://drive.google.com/file/d/1_OJQYk-xJgqB89cvT5Mkf9XOZLtxHsTs/view?usp=sharing",
+      "https://drive.google.com/file/d/16uuoqBe_9a1eyrAkCkX8eIq4ruM1eHKW/view?usp=sharing",
       "_blank"
     );
   };
