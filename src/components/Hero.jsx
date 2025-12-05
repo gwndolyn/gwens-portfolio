@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { HERO } from "../constants";
 import roundedTextImg from "../assets/rounded-text.png";
+import resumePic from "../assets/resumepic.png";
 import { HiArrowDown } from "react-icons/hi";
 import { FaHandPointUp } from "react-icons/fa"; // Importing hand icon
 import { motion } from "framer-motion";
 import ComputersCanvas from "./Computers";
 import Social from "./Social";
+import Folder from "./Folder";
 
 
 const Hero = () => {
@@ -146,23 +148,42 @@ useEffect(() => {
             </div>
           </motion.div>
 
-          <motion.button
-            onClick={handleResumeClick}
-            initial={{ opacity: 0, scale: 1 }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{
-              opacity: [0, 1, 0, 1, 1],
-              scale: [1, 1.05, 1, 1, 1],
+              opacity: [0, 1, 1, 1, 1],
+              scale: [0.8, 1.1, 1, 1, 1],
             }}
-            exit={{ opacity: 0, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
             transition={{
               duration: 1,
               ease: "easeInOut",
               times: [0, 0.2, 0.4, 0.6, 1],
             }}
-            className="ml-10 px-10 py-2 border-2 border-white rounded-lg bg-transparent bg-gradient-to-r text-white bg-clip-text transition duration-300 hover:bg-gradient-to-l hover:text-bold hover:border-white shadow-md"
+            className="ml-10 flex flex-col items-center gap-2"
           >
-            View Resume
-          </motion.button>
+            <Folder
+              color="#FF95C6"
+              size={0.6}
+              items={[
+                <div
+                  key="resume"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleResumeClick();
+                  }}
+                  className="flex items-center justify-center h-full cursor-pointer hover:scale-105 transition-transform p-1 overflow-hidden"
+                >
+                  <img
+                    src={resumePic}
+                    alt="Resume Preview"
+                    className="w-full h-full object-cover rounded"
+                  />
+                </div>
+              ]}
+            />
+            <span className="text-xs text-neutral-400">Click to view Resume</span>
+          </motion.div>
         </div>
       </div>
 
