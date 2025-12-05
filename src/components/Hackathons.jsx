@@ -33,11 +33,11 @@ const Hackathons = () => {
                 animationPlayState: isInView ? "running" : "paused",
               }}
             >
-              {/* Duplicate the list multiple times for seamless loop */}
-              {[...HACKATHONS, ...HACKATHONS, ...HACKATHONS, ...HACKATHONS].map((hackathon, index) => (
+              {/* Duplicate the list for seamless loop */}
+              {[...HACKATHONS, ...HACKATHONS].map((hackathon, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 whitespace-nowrap"
+                  className="flex items-center gap-12 whitespace-nowrap"
                 >
                   <span className="text-pink-400 text-xl">◆</span>
                   <span className="text-neutral-200 font-medium">
