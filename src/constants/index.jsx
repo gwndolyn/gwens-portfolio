@@ -48,10 +48,14 @@ import v9 from "../assets/volunteer/ocbc.jpg";
 import v10 from "../assets/volunteer/9.jpg";
 
 import cys from "../assets/qualifications/CYS.png";
-import ocbc from "../assets/qualifications/OCBC.png";
-import smu from "../assets/qualifications/SMU.png";
+import ocbc from "../assets/qualifications/ocbc.jpg";
+import smu from "../assets/qualifications/smu.jpg";
 import luxoft from "../assets/qualifications/Luxoft.png";
 import logic from "../assets/qualifications/logic.jpg";
+import heymax from "../assets/qualifications/heymax.png";
+import youthtech from "../assets/qualifications/youthtech.jpeg";
+import pwc from "../assets/qualifications/pwc.png";
+import np from "../assets/qualifications/ngee_ann_polytechnic_logo.jpeg";
 
 
 export const NAVIGATION_LINKS = [
@@ -76,35 +80,43 @@ export const ABOUT = [
 
 export const EXPERIENCES = [
   {
+    year: "Jan 2026 - Jun 2026",
+    role: "Digital Cloud & Data Consulting Intern",
+    company: "PwC",
+    logo: pwc,
+    description: ``,
+    technologies: [],
+  },
+  {
     year: "May 2025 - Aug 2025",
     role: "Software & Analytics Engineer Intern",
     company: "HeyMax",
-    logo:``,
-    description: ``,
+    logo: heymax,
+    description: `Developing data pipelines and analytics solutions using Python and SQL. Working with modern data stack tools including DBT for data transformation, GCP for cloud infrastructure, and n8n for workflow automation. Contributing to the design and implementation of scalable data engineering solutions.`,
     technologies: ["Python", "SQL", "DBT", "GCP", "n8n"],
-  },  
+  },
   {
     year: "Mar 2025 - Present",
     role: "Tech Division Associate, Technical Product Manager",
     company: "YouthTechSG",
-    logo: cys,
-    description: ``,
-    technologies: [],
-  },  
+    logo: youthtech,
+    description: `Leading technical product initiatives and managing cross-functional teams to deliver technology solutions for youth empowerment. Collaborating with stakeholders to define product roadmaps, prioritize features, and drive technical strategy. Bridging the gap between technical teams and business objectives to create impactful solutions.`,
+    technologies: ["Product Management", "Agile", "Stakeholder Management", "Technical Strategy"],
+  },
   {
     year: "Apr 2024 - Present",
     role: "UI/UX Designer",
     company: "SMU Dato Kho Hui Meng Career Centre",
     logo: smu,
-    description: ``,
-    technologies: ["Figma", "UI/UX Design"],
+    description: `Designing user-centered interfaces and experiences for career services platforms. Creating wireframes, prototypes, and high-fidelity designs using Figma. Conducting user research and usability testing to inform design decisions and improve student engagement with career resources.`,
+    technologies: ["Figma", "UI/UX Design", "User Research", "Prototyping"],
   },
   {
     year: "Jun 2024 - Jun 2025",
     role: "Data Engineer Intern",
     company: "Luxoft",
     logo: luxoft,
-    description: ``,
+    description: `Built and maintained big data pipelines for financial markets applications. Worked with distributed computing frameworks including Apache Spark and Hadoop to process large-scale datasets. Implemented data architecture solutions and containerized applications using Docker. Gained hands-on experience in financial data processing and enterprise-level data engineering practices.`,
     technologies: ["Big Data", "Financial Markets", "Data Architecture", "Apache Spark", "Docker", "Hadoop"],
   },
   {
@@ -112,31 +124,31 @@ export const EXPERIENCES = [
     role: "Python Tutor",
     company: "The Logic Coders",
     logo: logic,
-    description: ``,
-    technologies: ["Python"],
+    description: `Teaching Python programming fundamentals to students of varying skill levels. Developing customized lesson plans and coding exercises to enhance learning outcomes. Mentoring students in problem-solving, algorithmic thinking, and best coding practices. Fostering a supportive learning environment to build students' confidence in programming.`,
+    technologies: ["Python", "Teaching", "Curriculum Development", "Mentoring"],
   },
   {
     year: "Aug 2024 - Jan 2025",
     role: "Web Tech Associate",
     company: "SMU Patron's Day",
     logo: smu,
-    description: ``,
-    technologies: ["Figma"],
+    description: `Contributed to the design and development of web assets for SMU Patron's Day event. Created design mockups and collaborated with the technical team to implement responsive web interfaces. Ensured consistent branding and user experience across digital touchpoints for the university's flagship event.`,
+    technologies: ["Figma", "Web Design", "UI Design"],
   },
   {
     year: "Sep 2024 - Oct 2024",
     role: "Data Analyst",
     company: "SMU Office of Research",
     logo: smu,
-    description: ``,
-    technologies: ["Excel", "Data Analysis"],
+    description: `Analyzed research data and generated insights to support academic research initiatives. Performed data cleaning, transformation, and statistical analysis using Excel. Created visualizations and reports to communicate findings to stakeholders and support data-driven decision making for research projects.`,
+    technologies: ["Excel", "Data Analysis", "Statistical Analysis", "Data Visualization"],
   },
   {
     year: "Mar 2023 - Mar 2024",
     role: "Software Engineer Intern",
     company: "OCBC",
     logo: ocbc,
-    description: ``,
+    description: `Developed full-stack web applications using ReactJS, TypeScript, and Tailwind CSS for the frontend, and SpringBoot for backend services. Integrated APIs using WSO2 and documented endpoints with Swagger UI. Managed SQL databases and participated in UAT deployment processes. Contributed to CI/CD automation pipelines to streamline development workflows and improve deployment efficiency.`,
     technologies: ["ReactJS", "Typescript", "Tailwind CSS", "SpringBoot", "WSO2", "Swagger UI", "SQL", "UAT Deployment", "CI/CD Automation"],
   },
 ];
@@ -146,28 +158,42 @@ export const EDUCATION = [
     degree: "Bachelor of Science, Information Systems",
     institution: "Singapore Management University",
     duration: "2024 - 2028",
+    logo: smu,
     description: [
-      "Data Analyst for SMU Office of Research, 2024",
-      "UI/UX Designer for SMU Dato Kho Hui Meng Career Centre, 2024",
-      "Web Tech Associate for SMU Patron's Day, 2025",
-      "Facilitator for SMU Freshmen Orientation Programme, 2025",
-      "Web Tech Director for SMU Patron's Day 2026,",
+      "Leadership:",
+      "• Web Tech Associate for SMU Patron's Day 2025",
+      "• Web Tech Director for SMU Patron's Day 2026",
+      "• Facilitator for SMU Freshmen Orientation 2025",
+      "• Marketing Executive for SMU Stereometa, AY25/26",
+      "• Marketing Director for SMU Product Club, AY25/26",
+      "",
+      "Student Assistant:",
+      "• Data Analyst for Office of Research, 2024",
+      "• UI/UX Designer for Dato Kho Hui Meng Career Centre, 2025",
     ],
   },
   {
     degree: "Diploma in Information Technology, Minor in Global Readiness",
     institution: "Ngee Ann Polytechnic",
     duration: "2021-2024",
+    logo: np,
     description: [
-      "NP Mentors Silver Award, 2022",
-      "Certified Peer Helper, 2022",
-      "Project ID Industry Showcase (Top 7 Teams in cohort), 2024",
-      "Edusave Skills Award, 2024",
+      "• NP Mentors Silver Award, 2022",
+      "• Certified Peer Helper, 2022",
+      "• Project ID Industry Showcase (Top 7 Teams in cohort), 2024",
+      "• Edusave Skills Award, 2024",
     ],
   },
 ];
 
-
+export const HACKATHONS = [
+  "DSTA Brainhack, 2024",
+  "Deep Learning Week, 2025",
+  "National AI Student Challenge, 2025",
+  "Tiktok TechJam, 2025",
+  "Morgan Stanley Code to Give, 2025",
+  "GIC #CODETOIMPACT, 2025",
+];
 
 export const PROJECT_TAGS = ["All", "Web Development", "Machine Learning", "RPA", "Mobile Apps", "Excel"];
 

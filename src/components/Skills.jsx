@@ -53,7 +53,7 @@ const Skills = () => {
           whileInView={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 1 }}
-          className="my-20 text-center text-4xl"
+          className="my-10 text-center text-4xl"
         >
           Skills
         </motion.h2>

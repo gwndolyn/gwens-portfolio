@@ -92,7 +92,7 @@ useEffect(() => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
-          className="mt-8 mb-4 p-2 text-5xl font-bold md:text-5xl lg:text-[5rem]"
+          className="mt-8 mb-4 p-2 text-5xl font-bold md:text-5xl lg:text-[4rem]"
         >
           {typingText}
         </motion.h2>
