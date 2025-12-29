@@ -36,24 +36,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Technology Credits Section */}
-      <div className="mt-10 text-center text-gray-400 text-sm">
-        <p>
-          Built with{" "}
-          <span className=" hover:brightness-125 transition duration-200 font-semibold text-gray-300">
-            React
-          </span>{" "}
-          and{" "}
-          <span className=" hover:brightness-125 transition duration-200 font-semibold text-gray-300">
-            Tailwind CSS
-          </span>
-          , deployed with{" "}
-          <span className=" hover:brightness-125 transition duration-200 font-semibold text-gray-300">
-            Vercel
-          </span>
-          .
-        </p>
-      </div>
+
 
       {/* Copyright Section */}
       <p className="mt-2 text-center text-sm tracking-wide text-gray-400">
