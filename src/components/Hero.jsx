@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import ComputersCanvas from "./Computers";
 import Social from "./Social";
 import Folder from "./Folder";
+import Resume from "../assets/Gwendolyn Leong_resume.pdf";
 
 
 const Hero = () => {
@@ -68,7 +69,7 @@ const Hero = () => {
 
   const handleResumeClick = () => {
     window.open(
-      "https://drive.google.com/file/d/16uuoqBe_9a1eyrAkCkX8eIq4ruM1eHKW/view?usp=sharing",
+      Resume,
       "_blank"
     );
   };

@@ -24,7 +24,7 @@ const iconVariants = (duration) => ({
 
 const Skills = () => {
   const technologies = [
-    "FullStack Dev", "Machine Learning", "LLM", "Robotic Process Automation", "Salesforce CRM", "Cloud Computing", "Software Engineering", "Data Engineering", "AI Engineering", "Object-Oriented Programming", "Databases", "CI/CD", "DevOps", "API"
+    "FullStack Dev", "Machine Learning", "LLM", "Robotic Process Automation", "Salesforce CRM", "Cloud Computing", "Software Engineering", "Data Engineering", "AI Engineering", "Object-Oriented Programming", "Databases", "CI/CD", "DevOps", "API", "Business Process Architecture"
   ];
 
   const skills = [
