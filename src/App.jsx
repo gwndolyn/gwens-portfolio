@@ -44,29 +44,34 @@ const AppContent = () => {
   }, [cursorPosition]);
 
   const hideNavbar = location.pathname === '/marketing';
+  const isMarketingPage = location.pathname === '/marketing';
 
   return (
       <div className="relative h-full overflow-hidden antialiased">
-        {/* Background container with fixed position */}
-        <div className="fixed inset-0 -z-10 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,149,198,0.3),rgba(255,255,255,0))]"></div>
+        {/* Background container with fixed position - hide on marketing page */}
+        {!isMarketingPage && (
+          <>
+            <div className="fixed inset-0 -z-10 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,149,198,0.3),rgba(255,255,255,0))]"></div>
 
-        {/* Soft Lighting Effect */}
-        <div
-          style={{
-            position: "fixed",
-            top: lightPosition.y,
-            left: lightPosition.x,
-            transform: "translate(-50%, -50%)",
-            width: "150px",
-            height: "150px",
-            borderRadius: "50%",
-            background: "rgba(255, 149, 204, 0.2)",
-            boxShadow: "0 0 150px rgba(255, 149, 204, 0.7)",
-            pointerEvents: "none",
-            transition: "background 0.3s ease, box-shadow 0.3s ease",
-            filter: "blur(30px)",
-          }}
-        ></div>
+            {/* Soft Lighting Effect */}
+            <div
+              style={{
+                position: "fixed",
+                top: lightPosition.y,
+                left: lightPosition.x,
+                transform: "translate(-50%, -50%)",
+                width: "150px",
+                height: "150px",
+                borderRadius: "50%",
+                background: "rgba(255, 149, 204, 0.2)",
+                boxShadow: "0 0 150px rgba(255, 149, 204, 0.7)",
+                pointerEvents: "none",
+                transition: "background 0.3s ease, box-shadow 0.3s ease",
+                filter: "blur(30px)",
+              }}
+            ></div>
+          </>
+        )}
 
         {/* Navbar will now be included inside the Routes */}
         {!hideNavbar && <Navbar />}
