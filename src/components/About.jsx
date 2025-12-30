@@ -12,7 +12,7 @@ const About = () => {
       icon:<IoIosSettings />,
       color: "cyan",
       glowColor: "rgba(34, 211, 238, 0.4)",
-      link: "#projects",
+      link: "/projects",
       linkText: "View Projects"
     },
     {
@@ -21,7 +21,7 @@ const About = () => {
       icon: <FaLaptopCode />,
       color: "purple",
       glowColor: "rgba(168, 85, 247, 0.4)",
-      link: "#projects",
+      link: "/projects",
       linkText: "View Portfolio"
     },
     {
@@ -92,7 +92,8 @@ const About = () => {
                 </defs>
               </svg>
             </div>
-            <img className="rounded-2xl max-w-md w-full h-auto object-contain relative z-10" src={gwenImg} alt="about" />
+            <img className="rounded-2xl max-w-md w-full h-auto
+             object-contain relative z-10 scale-150" src={gwenImg} alt="about" />
           </div>
         </motion.div>
 
