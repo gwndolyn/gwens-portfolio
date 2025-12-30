@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion"; // Import AnimatePresence and motion
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -14,9 +14,11 @@ import Github from "./components/Github";
 import Hackathons from "./components/Hackathons";
 import Log from "./components/Log";
 import LogHome from "./components/LogHome";
+import Marketing from "./components/Marketing";
 import ErrorPage from "./components/ErrorPage"; // Import the ErrorPage component
 
-const App = () => {
+const AppContent = () => {
+  const location = useLocation();
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [lightPosition, setLightPosition] = useState({ x: 0, y: 0 });
 
@@ -41,32 +43,38 @@ const App = () => {
     };
   }, [cursorPosition]);
 
-  return (
-    <Router>
-      <div className="relative h-full overflow-hidden antialiased">
-        {/* Background container with fixed position */}
-        <div className="fixed inset-0 -z-10 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,149,198,0.3),rgba(255,255,255,0))]"></div>
+  const hideNavbar = location.pathname === '/marketing';
+  const isMarketingPage = location.pathname === '/marketing';
 
-        {/* Soft Lighting Effect */}
-        <div
-          style={{
-            position: "fixed",
-            top: lightPosition.y,
-            left: lightPosition.x,
-            transform: "translate(-50%, -50%)",
-            width: "150px",
-            height: "150px",
-            borderRadius: "50%",
-            background: "rgba(255, 149, 204, 0.2)",
-            boxShadow: "0 0 150px rgba(255, 149, 204, 0.7)",
-            pointerEvents: "none",
-            transition: "background 0.3s ease, box-shadow 0.3s ease",
-            filter: "blur(30px)",
-          }}
-        ></div>
+  return (
+      <div className="relative h-full overflow-hidden antialiased">
+        {/* Background container with fixed position - hide on marketing page */}
+        {!isMarketingPage && (
+          <>
+            <div className="fixed inset-0 -z-10 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,149,198,0.3),rgba(255,255,255,0))]"></div>
+
+            {/* Soft Lighting Effect */}
+            <div
+              style={{
+                position: "fixed",
+                top: lightPosition.y,
+                left: lightPosition.x,
+                transform: "translate(-50%, -50%)",
+                width: "150px",
+                height: "150px",
+                borderRadius: "50%",
+                background: "rgba(255, 149, 204, 0.2)",
+                boxShadow: "0 0 150px rgba(255, 149, 204, 0.7)",
+                pointerEvents: "none",
+                transition: "background 0.3s ease, box-shadow 0.3s ease",
+                filter: "blur(30px)",
+              }}
+            ></div>
+          </>
+        )}
 
         {/* Navbar will now be included inside the Routes */}
-        <Navbar />
+        {!hideNavbar && <Navbar />}
 
         {/* Wrap Routes with AnimatePresence to enable smooth transitions */}
         <AnimatePresence mode="wait">
@@ -173,13 +181,36 @@ const App = () => {
                   <LogHome />
                 </motion.div>
               }
-            />   
+            />
+
+            {/* Route for Marketing */}
+            <Route
+              path="/marketing"
+              element={
+                <motion.div
+                  className="relative z-10 w-full h-full"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  <Marketing />
+                </motion.div>
+              }
+            />
 
             {/* Catch-all Route for 404 - Page Not Found */}
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </AnimatePresence>
       </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 };

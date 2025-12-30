@@ -62,7 +62,7 @@ const Qualifications = () => {
                         <img
                           src={edu.logo}
                           alt={`${edu.institution} logo`}
-                          className="w-12 h-12 object-cover rounded-full"
+                          className="w-12 h-12 object-cover rounded-sm"
                         />
                       )}
                       <div className="flex-1">
@@ -106,7 +106,7 @@ const Qualifications = () => {
                         <img
                           src={experience.logo}
                           alt={`${experience.company} logo`}
-                          className={`w-12 h-12 rounded-full ${
+                          className={`w-12 h-12 rounded-sm ${
                             experience.company === "The Logic Coders" || experience.company === "Luxoft"
                               ? "object-contain bg-white"
                               : "object-cover"
