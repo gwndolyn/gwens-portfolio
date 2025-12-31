@@ -44,7 +44,7 @@ export default function MarketingTools() {
           duration: 1.2,
           ease: [0.25, 0.46, 0.45, 0.94]
         }}
-        className="absolute top-12 right-12 text-6xl lg:text-7xl font-black text-white tracking-tighter"
+        className="absolute top-6 right-4 lg:top-12 lg:right-12 text-3xl md:text-5xl lg:text-7xl font-black text-white tracking-tighter text-right"
       >
         EDITING TECHNOLOGIES
       </motion.h2>
@@ -80,7 +80,7 @@ export default function MarketingTools() {
       </div>
 
 
-      {/* Tool names list - Bottom Right */}
+      {/* Tool names list - Bottom Right - Hidden on mobile */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -89,7 +89,7 @@ export default function MarketingTools() {
           delay: 0.6,
           ease: [0.25, 0.46, 0.45, 0.94]
         }}
-        className="absolute bottom-12 right-12 text-right space-y-1"
+        className="hidden lg:block absolute bottom-12 right-12 text-right space-y-1"
       >
         {tools.map((tool, index) => (
           <motion.p

@@ -189,7 +189,7 @@ const Masonry = ({
   };
 
   return (
-    <div ref={containerRef} className="relative w-full pl-8" style={{ height: `${grid.totalHeight}px` }}>
+    <div ref={containerRef} className="relative w-full" style={{ height: `${grid.totalHeight}px` }}>
       {grid.items.map(item => (
         <div
           key={item.id}

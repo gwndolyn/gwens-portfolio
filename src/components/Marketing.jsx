@@ -128,14 +128,14 @@ export default function Marketing() {
       {/* Logo - always visible */}
       <motion.a
         href="/"
-        className="fixed top-8 left-8 pointer-events-auto z-[100]"
+        className="fixed top-4 left-4 lg:top-8 lg:left-8 pointer-events-auto z-[100]"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <img src={logo} alt="Logo" className="w-auto h-8" />
+        <img src={logo} alt="Logo" className="w-auto h-6 lg:h-8" />
       </motion.a>
 
       {/* DomeGallery + Name Section - sticky background */}
@@ -256,16 +256,16 @@ export default function Marketing() {
 
         {/* About Section - appears after name fades, before DomeGallery reveals */}
         <motion.div
-          className="fixed inset-0 w-full h-screen flex items-center justify-center pointer-events-none z-60"
+          className="fixed inset-0 w-full h-screen flex items-center justify-center pointer-events-none z-60 px-4 lg:px-0"
           style={{
             opacity: aboutOpacity,
             y: aboutY
           }}
         >
-          <div className="w-full flex flex-col lg:flex-row items-center">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-0">
             {/* Left side - Gwen Image */}
             <motion.div
-              className="w-full lg:w-1/2 flex-shrink-0"
+              className="w-full lg:w-1/2 flex-shrink-0 flex justify-center lg:justify-start"
               style={{ opacity: aboutOpacity }}
             >
               <img
@@ -273,19 +273,19 @@ export default function Marketing() {
                 alt="Gwen"
                 className="w-auto h-auto object-contain rounded-3xl"
                 style={{
-                  height: '120vh',
+                  height: 'clamp(60vh, 120vh, 120vh)',
                   width: 'auto',
-                  minHeight: '120vh',
+                  maxWidth: '100%',
                   filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5))'
                 }}
               />
             </motion.div>
 
             {/* Right side - Text content */}
-            <div className="w-full lg:w-1/2 px-1 lg:px-1 flex flex-col justify-center space-y-8">
+            <div className="w-full lg:w-1/2 px-4 lg:px-1 flex flex-col justify-center space-y-4 lg:space-y-8">
               {/* Title with quotes */}
               <motion.h3
-                className="text-6xl lg:text-8xl font-black tracking-tight uppercase mb-8"
+                className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tight uppercase mb-4 lg:mb-8"
                 style={{
                   opacity: aboutOpacity,
                   letterSpacing: '0.05em',
@@ -308,39 +308,39 @@ export default function Marketing() {
 
               {/* Roles */}
               <motion.div
-                className="space-y-2 mb-10"
+                className="space-y-1 lg:space-y-2 mb-6 lg:mb-10"
                 style={{ opacity: aboutOpacity }}
               >
-                <p className="text-lg lg:text-xl font-bold text-white uppercase tracking-wide">
+                <p className="text-sm md:text-base lg:text-xl font-bold text-white uppercase tracking-wide">
                   WEBTECH DIRECTOR FOR PD26
                 </p>
-                <p className="text-lg lg:text-xl font-bold text-white uppercase tracking-wide">
+                <p className="text-sm md:text-base lg:text-xl font-bold text-white uppercase tracking-wide">
                   MARKETING DIRECTOR FOR PRODUCT CLUB
                 </p>
-                <p className="text-lg lg:text-xl font-bold text-white uppercase tracking-wide">
+                <p className="text-sm md:text-base lg:text-xl font-bold text-white uppercase tracking-wide">
                   MARKETING EXECUTIVE FOR STEREOMETA
                 </p>
-                <p className="text-lg lg:text-xl font-bold text-white uppercase tracking-wide">
+                <p className="text-sm md:text-base lg:text-xl font-bold text-white uppercase tracking-wide">
                   TECHLEAD OF MARCOMMS @ YOUTHTECHSG
                 </p>
               </motion.div>
 
               {/* Passion section */}
               <motion.div
-                className="space-y-4"
+                className="space-y-2 lg:space-y-4"
                 style={{ opacity: aboutOpacity }}
               >
-                <p className="text-xl lg:text-xl font-bold text-white uppercase tracking-wide mb-4">
+                <p className="text-base md:text-lg lg:text-xl font-bold text-white uppercase tracking-wide mb-2 lg:mb-4">
                   PASSION FOR
                 </p>
-                <ul className="space-y-2 ml-8">
-                  <li className="text-lg lg:text-xl text-white uppercase tracking-wide list-disc">
+                <ul className="space-y-1 lg:space-y-2 ml-6 lg:ml-8">
+                  <li className="text-sm md:text-base lg:text-xl text-white uppercase tracking-wide list-disc">
                     DESIGN & BRANDING
                   </li>
-                  <li className="text-lg lg:text-xl text-white uppercase tracking-wide list-disc">
+                  <li className="text-sm md:text-base lg:text-xl text-white uppercase tracking-wide list-disc">
                     PHOTOGRAPHY
                   </li>
-                  <li className="text-lg lg:text-xl text-white uppercase tracking-wide list-disc">
+                  <li className="text-sm md:text-base lg:text-xl text-white uppercase tracking-wide list-disc">
                     EDITING
                   </li>
                 </ul>
@@ -358,7 +358,7 @@ export default function Marketing() {
       <div ref={masonryRef} className="relative w-full bg-neutral-950">
         <div className="flex flex-row">
           {/* Left side - Masonry images */}
-          <div className="w-full lg:w-1/2 py-20">
+          <div className="w-full lg:w-1/2 py-10 lg:py-20 px-4 lg:px-0">
             <Masonry
               items={marketingProjects}
               ease="power3.out"
@@ -425,7 +425,7 @@ export default function Marketing() {
       <MarketingTools />
 
       {/* Let's Connect Section */}
-      <div className="relative w-full bg-gradient-to-b from-black via-black to-neutral-950 flex items-center justify-center overflow-hidden py-20">
+      <div className="relative w-full bg-gradient-to-b from-black via-black to-neutral-950 flex items-center justify-center overflow-hidden py-12 lg:py-20">
         {/* Gradient blurred orbs background - continuing from previous section */}
         <div className="absolute inset-0">
 
@@ -433,7 +433,7 @@ export default function Marketing() {
           <div className="absolute bottom-0 right-1/3 w-64 h-64 bg-orange-300/15 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex items-center justify-between">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0">
           {/* Left side - Connect Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -442,11 +442,12 @@ export default function Marketing() {
               duration: 1,
               ease: [0.25, 0.46, 0.45, 0.94]
             }}
+            className="w-full lg:w-auto"
           >
             <img
               src={connect}
               alt="Let's Connect"
-              className="w-full max-w-2xl h-auto object-contain"
+              className="w-full max-w-md lg:max-w-2xl h-auto object-contain mx-auto lg:mx-0"
             />
           </motion.div>
 
@@ -458,13 +459,13 @@ export default function Marketing() {
               duration: 0.8,
               ease: [0.25, 0.46, 0.45, 0.94]
             }}
-            className="flex flex-col space-y-8"
+            className="flex flex-col space-y-6 lg:space-y-8"
           >
             <a
               href="https://instagram.com/gwenxdolyn"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-2xl font-bold uppercase tracking-wide hover:text-pink-400 transition-colors duration-300"
+              className="text-white text-xl lg:text-2xl font-bold uppercase tracking-wide hover:text-pink-400 transition-colors duration-300 text-center lg:text-left"
             >
               Instagram
             </a>
@@ -472,7 +473,7 @@ export default function Marketing() {
               href="https://linkedin.com/gwndolyn"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-2xl font-bold uppercase tracking-wide hover:text-blue-400 transition-colors duration-300"
+              className="text-white text-xl lg:text-2xl font-bold uppercase tracking-wide hover:text-blue-400 transition-colors duration-300 text-center lg:text-left"
             >
               LinkedIn
             </a>
