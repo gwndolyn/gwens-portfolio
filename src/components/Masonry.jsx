@@ -98,14 +98,14 @@ const Masonry = ({
   const grid = useMemo(() => {
     if (!width) return { items: [], totalHeight: 0 };
     const colHeights = new Array(columns).fill(0);
-    const gap = 16;
+    const gap = 8;
     const totalGaps = (columns - 1) * gap;
     const columnWidth = (width - totalGaps) / columns;
 
     const gridItems = items.map(child => {
       const col = colHeights.indexOf(Math.min(...colHeights));
       const x = col * (columnWidth + gap);
-      const height = child.height / 2;
+      const height = columnWidth * (child.height / 1000);
       const y = colHeights[col];
 
       colHeights[col] += height + gap;
@@ -189,7 +189,7 @@ const Masonry = ({
   };
 
   return (
-    <div ref={containerRef} className="relative w-full pl-8" style={{ height: `${grid.totalHeight}px` }}>
+    <div ref={containerRef} className="relative w-full" style={{ height: `${grid.totalHeight}px` }}>
       {grid.items.map(item => (
         <div
           key={item.id}
@@ -200,14 +200,11 @@ const Masonry = ({
           onMouseEnter={e => handleMouseEnter(item.id, e.currentTarget)}
           onMouseLeave={e => handleMouseLeave(item.id, e.currentTarget)}
         >
-          <div
-            className="relative w-full h-full bg-cover bg-center rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] uppercase text-[10px] leading-[10px]"
-            style={{ backgroundImage: `url(${item.img})` }}
-          >
-            {colorShiftOnHover && (
-              <div className="color-overlay absolute inset-0 rounded-[10px] bg-gradient-to-tr from-pink-500/50 to-sky-500/50 opacity-0 pointer-events-none" />
-            )}
-          </div>
+          <img
+            src={item.img}
+            alt={item.id}
+            className="w-full h-full object-cover rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)]"
+          />
         </div>
       ))}
     </div>

@@ -1,35 +1,45 @@
 import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
 
+// Marketing photos
+import img1 from '../assets/marketing/photos/IMG_0480.JPG';
+import img2 from '../assets/marketing/photos/IMG_0518.JPG';
+import img3 from '../assets/marketing/photos/IMG_0842.JPG';
+import img4 from '../assets/marketing/photos/IMG_1189.JPG';
+import img5 from '../assets/marketing/photos/IMG_1241.JPG';
+import img6 from '../assets/marketing/photos/IMG_1610.JPG';
+import img7 from '../assets/marketing/photos/IMG_1787.JPG';
+import img8 from '../assets/marketing/photos/IMG_1882.JPG';
+import img9 from '../assets/marketing/photos/IMG_2027.JPG';
+import img10 from '../assets/marketing/photos/IMG_2136.JPG';
+import img11 from '../assets/marketing/photos/IMG_5149.JPG';
+import img12 from '../assets/marketing/photos/IMG_5221.JPG';
+import img13 from '../assets/marketing/photos/IMG_5644.JPG';
+import img14 from '../assets/marketing/photos/IMG_5939.JPG';
+import img15 from '../assets/marketing/photos/IMG_6074.JPG';
+import img16 from '../assets/marketing/photos/IMG_6096.JPG';
+import img17 from '../assets/marketing/photos/IMG_9337.JPG';
+import img18 from '../assets/marketing/photos/IMG_9529.JPG';
+
 const DEFAULT_IMAGES = [
-  {
-    src: 'https://images.unsplash.com/photo-1755331039789-7e5680e26e8f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Abstract art'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1755569309049-98410b94f66d?q=80&w=772&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Modern sculpture'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1755497595318-7e5e3523854f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Digital artwork'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1755353985163-c2a0fe5ac3d8?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Contemporary art'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1745965976680-d00be7dc0377?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Geometric pattern'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1752588975228-21f44630bb3c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Textured surface'
-  },
-  {
-    src: 'https://pbs.twimg.com/media/Gyla7NnXMAAXSo_?format=jpg&name=large',
-    alt: 'Social media image'
-  }
+  { src: img1, alt: 'Marketing photo 1' },
+  { src: img2, alt: 'Marketing photo 2' },
+  { src: img3, alt: 'Marketing photo 3' },
+  { src: img4, alt: 'Marketing photo 4' },
+  { src: img5, alt: 'Marketing photo 5' },
+  { src: img6, alt: 'Marketing photo 6' },
+  { src: img7, alt: 'Marketing photo 7' },
+  { src: img8, alt: 'Marketing photo 8' },
+  { src: img9, alt: 'Marketing photo 9' },
+  { src: img10, alt: 'Marketing photo 10' },
+  { src: img11, alt: 'Marketing photo 11' },
+  { src: img12, alt: 'Marketing photo 12' },
+  { src: img13, alt: 'Marketing photo 13' },
+  { src: img14, alt: 'Marketing photo 14' },
+  { src: img15, alt: 'Marketing photo 15' },
+  { src: img16, alt: 'Marketing photo 16' },
+  { src: img17, alt: 'Marketing photo 17' },
+  { src: img18, alt: 'Marketing photo 18' },
 ];
 
 const DEFAULTS = {
