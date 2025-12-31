@@ -53,7 +53,7 @@ const About = () => {
             className="mb-12 text-center text-3xl lg:text-4xl relative"
       >
         <span className="relative inline-block">
-          About Me
+          What I Do
           <motion.div
             className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
             initial={{ scaleX: 0 }}
