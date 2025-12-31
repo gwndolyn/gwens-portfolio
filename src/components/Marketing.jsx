@@ -4,16 +4,26 @@ import DomeGallery from './DomeGallery';
 import Masonry from './Masonry';
 import MarketingTools from './MarketingTools';
 import logo from '../assets/logo.png';
+import gwenImg from '../assets/gwen.png';
+import connect from '../assets/marketing/connect.png';
 
-// TODO: Add your marketing project images here
-// Example:
-// import marketing1 from '../assets/marketing/project1.png';
-// import marketing2 from '../assets/marketing/project2.png';
+// Marketing posters
+import photostrip from '../assets/marketing/posters/photostrip.png';
+import web3 from '../assets/marketing/posters/web3.png';
+import fintech from '../assets/marketing/posters/fintech.png';
+import design from '../assets/marketing/posters/design.jpeg';
+import heymax1 from '../assets/marketing/posters/heymax1.png';
+import heymax2 from '../assets/marketing/posters/heymax2.png';
+import heymax3 from '../assets/marketing/posters/heymax3.png';
+import heymax4 from '../assets/marketing/posters/heymax4.png';
+import pme from '../assets/marketing/posters/pme.webp';
 
 export default function Marketing() {
   const containerRef = useRef(null);
   const masonryRef = useRef(null);
   const [postersFixed, setPostersFixed] = useState(false);
+  const [postersAtBottom, setPostersAtBottom] = useState(false);
+  const [loadedProjects, setLoadedProjects] = useState([]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -29,12 +39,19 @@ export default function Marketing() {
       const sectionBottom = rect.bottom;
       const viewportHeight = window.innerHeight;
 
-      // Text should be fixed when section is in the middle portion of viewport
-      // and there's still content below
+      // Three states for the Posters text:
+      // 1. Relative: scrolling in (sectionTop > 0)
+      // 2. Fixed: sticky in middle (sectionTop <= 0 && sectionBottom > viewportHeight)
+      // 3. Absolute at bottom: scrolling out (sectionBottom <= viewportHeight)
       if (sectionTop <= 0 && sectionBottom > viewportHeight) {
         setPostersFixed(true);
+        setPostersAtBottom(false);
+      } else if (sectionBottom <= viewportHeight) {
+        setPostersFixed(false);
+        setPostersAtBottom(true);
       } else {
         setPostersFixed(false);
+        setPostersAtBottom(false);
       }
     };
 
@@ -44,56 +61,67 @@ export default function Marketing() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Transform scroll progress to blur value (starts at 8px, ends at 0px)
-  const blurValue = useTransform(scrollYProgress, [0, 0.5], [8, 0]);
+  // Transform scroll progress to blur value
+  // Stays blurred (8px) until after about section, then deblurs
+  const blurValue = useTransform(scrollYProgress, [0, 0.4, 0.6], [8, 8, 0]);
 
   // Transform scroll progress to opacity for the name (1 to 0)
-  const nameOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const nameOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
   // Transform scroll progress to scale for the name
-  const nameScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.8]);
+  const nameScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.8]);
+
+  // Transform scroll progress for about section
+  const aboutOpacity = useTransform(scrollYProgress, [0.15, 0.25, 0.35, 0.45], [0, 1, 1, 0]);
+  const aboutY = useTransform(scrollYProgress, [0.15, 0.25], ['20vh', '0vh']);
 
   // Transform scroll progress to move DomeGallery up and out of view
-  const domeY = useTransform(scrollYProgress, [0.5, 1], ['0vh', '-100vh']);
+  const domeY = useTransform(scrollYProgress, [0.6, 1], ['0vh', '-100vh']);
 
   // Marketing projects for Masonry
-  // TODO: Replace with actual marketing project images
-  const baseProjects = [
-    {
-      id: "1",
-      img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800",
-      url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800",
-      height: 600,
-    },
-    {
-      id: "2",
-      img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800",
-      url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800",
-      height: 750,
-    },
-    {
-      id: "3",
-      img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800",
-      url: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800",
-      height: 500,
-    },
-    {
-      id: "4",
-      img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800",
-      url: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800",
-      height: 650,
-    }
+  const postersList = [
+    { id: "photostrip", img: photostrip, url: photostrip },
+    { id: "web3", img: web3, url: web3 },
+    { id: "fintech", img: fintech, url: fintech },
+    { id: "design", img: design, url: design },
+    { id: "heymax1", img: heymax1, url: heymax1 },
+    { id: "heymax2", img: heymax2, url: heymax2 },
+    { id: "heymax3", img: heymax3, url: heymax3 },
+    { id: "heymax4", img: heymax4, url: heymax4 },
+    { id: "pme", img: pme, url: pme },
   ];
 
-  // Duplicate the projects to fill the gallery
-  const marketingProjects = [
-    ...baseProjects,
-    ...baseProjects.map(p => ({ ...p, id: `${p.id}-dup1` })),
-    ...baseProjects.map(p => ({ ...p, id: `${p.id}-dup2` })),
-    ...baseProjects.map(p => ({ ...p, id: `${p.id}-dup3` })),
-    ...baseProjects.map(p => ({ ...p, id: `${p.id}-dup4` })),
-    ...baseProjects.map(p => ({ ...p, id: `${p.id}-dup5` })),
-  ];
+  // Load images and calculate exact aspect ratios
+  useEffect(() => {
+    const loadImages = async () => {
+      const loaded = await Promise.all(
+        postersList.map(poster => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+              // Calculate exact aspect ratio: height/width
+              const aspectRatio = img.naturalHeight / img.naturalWidth;
+              resolve({
+                ...poster,
+                height: aspectRatio * 1000
+              });
+            };
+            img.onerror = () => {
+              resolve({
+                ...poster,
+                height: 2000 // 1:1 fallback
+              });
+            };
+            img.src = poster.img;
+          });
+        })
+      );
+      setLoadedProjects(loaded);
+    };
+    loadImages();
+  }, []);
+
+  const marketingProjects = loadedProjects;
 
   return (
     <div className="relative w-full">
@@ -218,6 +246,110 @@ export default function Marketing() {
           </motion.div>
         </motion.div>
 
+        {/* Darker overlay for About section */}
+        <motion.div
+          className="fixed inset-0 w-full h-screen bg-black/50 pointer-events-none z-55"
+          style={{
+            opacity: aboutOpacity,
+          }}
+        />
+
+        {/* About Section - appears after name fades, before DomeGallery reveals */}
+        <motion.div
+          className="fixed inset-0 w-full h-screen flex items-center justify-center pointer-events-none z-60"
+          style={{
+            opacity: aboutOpacity,
+            y: aboutY
+          }}
+        >
+          <div className="w-full flex flex-col lg:flex-row items-center">
+            {/* Left side - Gwen Image */}
+            <motion.div
+              className="w-full lg:w-1/2 flex-shrink-0"
+              style={{ opacity: aboutOpacity }}
+            >
+              <img
+                src={gwenImg}
+                alt="Gwen"
+                className="w-auto h-auto object-contain rounded-3xl"
+                style={{
+                  height: '120vh',
+                  width: 'auto',
+                  minHeight: '120vh',
+                  filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5))'
+                }}
+              />
+            </motion.div>
+
+            {/* Right side - Text content */}
+            <div className="w-full lg:w-1/2 px-1 lg:px-1 flex flex-col justify-center space-y-8">
+              {/* Title with quotes */}
+              <motion.h3
+                className="text-6xl lg:text-8xl font-black tracking-tight uppercase mb-8"
+                style={{
+                  opacity: aboutOpacity,
+                  letterSpacing: '0.05em',
+                  background: 'linear-gradient(135deg, #ffc4e1 0%, #ffb8d5 25%, #ff9dc9 50%, #ffb8d5 75%, #ffc4e1 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(0 5px 15px rgba(255, 157, 201, 0.4)) drop-shadow(0 0 40px rgba(255, 184, 213, 0.3))',
+                  textShadow: '0 3px 8px rgba(255, 157, 201, 0.4)',
+                }}
+              >
+                <span style={{
+                  position: 'relative',
+                  display: 'inline-block',
+                  filter: 'drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.4)) drop-shadow(-1px -1px 2px rgba(0, 0, 0, 0.2))'
+                }}>
+                  " ABOUT
+                </span>
+              </motion.h3>
+
+              {/* Roles */}
+              <motion.div
+                className="space-y-2 mb-10"
+                style={{ opacity: aboutOpacity }}
+              >
+                <p className="text-lg lg:text-xl font-bold text-white uppercase tracking-wide">
+                  WEBTECH DIRECTOR FOR PD26
+                </p>
+                <p className="text-lg lg:text-xl font-bold text-white uppercase tracking-wide">
+                  MARKETING DIRECTOR FOR PRODUCT CLUB
+                </p>
+                <p className="text-lg lg:text-xl font-bold text-white uppercase tracking-wide">
+                  MARKETING EXECUTIVE FOR STEREOMETA
+                </p>
+                <p className="text-lg lg:text-xl font-bold text-white uppercase tracking-wide">
+                  TECHLEAD OF MARCOMMS @ YOUTHTECHSG
+                </p>
+              </motion.div>
+
+              {/* Passion section */}
+              <motion.div
+                className="space-y-4"
+                style={{ opacity: aboutOpacity }}
+              >
+                <p className="text-xl lg:text-xl font-bold text-white uppercase tracking-wide mb-4">
+                  PASSION FOR
+                </p>
+                <ul className="space-y-2 ml-8">
+                  <li className="text-lg lg:text-xl text-white uppercase tracking-wide list-disc">
+                    DESIGN & BRANDING
+                  </li>
+                  <li className="text-lg lg:text-xl text-white uppercase tracking-wide list-disc">
+                    PHOTOGRAPHY
+                  </li>
+                  <li className="text-lg lg:text-xl text-white uppercase tracking-wide list-disc">
+                    EDITING
+                  </li>
+                </ul>
+              </motion.div>
+
+            </div>
+          </div>
+        </motion.div>
+
         {/* Spacer to enable scrolling */}
         <div className="h-[300vh]" />
       </div>
@@ -245,9 +377,15 @@ export default function Marketing() {
             {/* Spacer when fixed to maintain layout */}
             {postersFixed && <div className="h-screen" />}
 
-            {/* Posters text - switches between relative and fixed */}
+            {/* Posters text - three states: relative (scrolling in), fixed (sticky), absolute (scrolling out) */}
             <div
-              className={`flex items-center justify-center h-screen ${postersFixed ? 'fixed top-1/2 -translate-y-1/2 right-0 w-1/2' : 'relative'}`}
+              className={`flex items-center justify-center h-screen ${
+                postersFixed
+                  ? 'fixed top-1/2 -translate-y-1/2 right-0 w-1/2'
+                  : postersAtBottom
+                    ? 'absolute bottom-0 right-0 w-full'
+                    : 'relative'
+              }`}
               style={{
                 willChange: postersFixed ? 'transform' : 'auto',
                 backfaceVisibility: 'hidden',
@@ -285,6 +423,62 @@ export default function Marketing() {
 
       {/* Tools Section */}
       <MarketingTools />
+
+      {/* Let's Connect Section */}
+      <div className="relative w-full bg-gradient-to-b from-black via-black to-neutral-950 flex items-center justify-center overflow-hidden py-20">
+        {/* Gradient blurred orbs background - continuing from previous section */}
+        <div className="absolute inset-0">
+
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-pink-400/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-1/3 w-64 h-64 bg-orange-300/15 rounded-full blur-[120px]" />
+        </div>
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex items-center justify-between">
+          {/* Left side - Connect Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
+            <img
+              src={connect}
+              alt="Let's Connect"
+              className="w-full max-w-2xl h-auto object-contain"
+            />
+          </motion.div>
+
+          {/* Right side - Social Media Links */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+            className="flex flex-col space-y-8"
+          >
+            <a
+              href="https://instagram.com/gwenxdolyn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-2xl font-bold uppercase tracking-wide hover:text-pink-400 transition-colors duration-300"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://linkedin.com/gwndolyn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-2xl font-bold uppercase tracking-wide hover:text-blue-400 transition-colors duration-300"
+            >
+              LinkedIn
+            </a>
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
