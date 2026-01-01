@@ -8,7 +8,6 @@ import gwenImg from '../assets/gwen.png';
 import connect from '../assets/marketing/connect.png';
 
 // Marketing posters
-import photostrip from '../assets/marketing/posters/photostrip.png';
 import web3 from '../assets/marketing/posters/web3.png';
 import fintech from '../assets/marketing/posters/fintech.png';
 import design from '../assets/marketing/posters/design.jpeg';
@@ -78,17 +77,21 @@ export default function Marketing() {
   // Transform scroll progress to move DomeGallery up and out of view
   const domeY = useTransform(scrollYProgress, [0.6, 1], ['0vh', '-100vh']);
 
+  // Opacity for drag prompt (visible when dome is clear, fades when scrolling out)
+  const dragPromptOpacity = useTransform(scrollYProgress, [0.5, 0.6, 0.65], [0, 1, 0]);
+
   // Marketing projects for Masonry
   const postersList = [
-    { id: "photostrip", img: photostrip, url: photostrip },
+
+    { id: "pme", img: pme, url: pme },
+    { id: "heymax2", img: heymax2, url: heymax2 },
     { id: "web3", img: web3, url: web3 },
     { id: "fintech", img: fintech, url: fintech },
     { id: "design", img: design, url: design },
     { id: "heymax1", img: heymax1, url: heymax1 },
-    { id: "heymax2", img: heymax2, url: heymax2 },
     { id: "heymax3", img: heymax3, url: heymax3 },
     { id: "heymax4", img: heymax4, url: heymax4 },
-    { id: "pme", img: pme, url: pme },
+
   ];
 
   // Load images and calculate exact aspect ratios
@@ -149,6 +152,31 @@ export default function Marketing() {
           }}
         >
           <DomeGallery />
+
+          {/* Swipe/Drag Prompt */}
+          <motion.div
+            className="absolute bottom-24 left-1/2 -translate-x-1/2 pointer-events-none z-20"
+            style={{ opacity: dragPromptOpacity }}
+          >
+            <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+              <svg
+                className="w-4 h-4 text-gray-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+                />
+              </svg>
+              <span className="text-xs lg:text-sm text-gray-300 font-light tracking-wide">
+                Drag to explore
+              </span>
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Dark overlay - fades away with scroll */}
@@ -358,7 +386,7 @@ export default function Marketing() {
       <div ref={masonryRef} className="relative w-full bg-neutral-950">
         <div className="flex flex-row">
           {/* Left side - Masonry images */}
-          <div className="w-full lg:w-1/2 py-10 lg:py-20 px-4 lg:px-0">
+          <div className="w-full lg:w-1/2 py-10 lg:py-20 px-4 lg:pl-12">
             <Masonry
               items={marketingProjects}
               ease="power3.out"
@@ -379,7 +407,7 @@ export default function Marketing() {
 
             {/* Posters text - three states: relative (scrolling in), fixed (sticky), absolute (scrolling out) */}
             <div
-              className={`flex items-center justify-center h-screen ${
+              className={`flex items-center justify-center h-screen py-20 ${
                 postersFixed
                   ? 'fixed top-1/2 -translate-y-1/2 right-0 w-1/2'
                   : postersAtBottom
@@ -395,7 +423,7 @@ export default function Marketing() {
               <h2
                 className="font-black tracking-tight select-none"
                 style={{
-                  fontSize: 'clamp(8rem, 15vw, 18rem)',
+                  fontSize: 'clamp(4rem, 15vw, 12rem)',
                   writingMode: 'vertical-rl',
                   textOrientation: 'mixed',
                   background: 'linear-gradient(135deg, #ffd4c4 0%, #ffb8a8 25%, #ff9d8f 50%, #ffb8a8 75%, #ffd4c4 100%)',
