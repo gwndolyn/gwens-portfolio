@@ -459,23 +459,23 @@ export default function Marketing() {
               duration: 0.8,
               ease: [0.25, 0.46, 0.45, 0.94]
             }}
-            className="flex flex-col space-y-6 lg:space-y-8"
+            className="flex flex-col space-y-6 lg:space-y-8 pr-10"
           >
             <a
               href="https://instagram.com/gwenxdolyn"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-xl lg:text-2xl font-bold uppercase tracking-wide hover:text-pink-400 transition-colors duration-300 text-center lg:text-left"
+              className="text-white text-xl lg:text-2xl font-bold uppercase tracking-wide hover:text-pink-400 transition-colors duration-300 text-center lg:text-right"
             >
-              Instagram
+              // Instagram
             </a>
             <a
               href="https://linkedin.com/gwndolyn"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-xl lg:text-2xl font-bold uppercase tracking-wide hover:text-blue-400 transition-colors duration-300 text-center lg:text-left"
+              className="text-white text-xl lg:text-2xl font-bold uppercase tracking-wide hover:text-blue-400 transition-colors duration-300 text-center lg:text-right"
             >
-              LinkedIn
+              // LinkedIn
             </a>
           </motion.div>
         </div>
