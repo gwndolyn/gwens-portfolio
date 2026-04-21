@@ -1,152 +1,107 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
-import { PROJECTS, PROJECT_TAGS } from "../constants";
-import { FaGithub } from "react-icons/fa"; // Import GitHub icon
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { KEY_PROJECTS, PROJECT_TAGS } from "../constants";
+import { HiOutlineExternalLink } from "react-icons/hi";
+import CursorGlow from "./CursorGlow";
+import PageTopbar from "./PageTopbar";
+import ContactSection from "./ContactSection";
+import PageFooter from "./PageFooter";
 
 const Projects = () => {
   const [selectedTags, setSelectedTags] = useState(["All"]);
-  const location = useLocation();
+  const navigate = useNavigate();
 
-  // Scroll to the top whenever the route changes
+  useEffect(() => { window.scrollTo({ top: 0 }); }, []);
+
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, [location]);
+    const els = document.querySelectorAll(".ph-reveal");
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("in"); }),
+      { threshold: 0.08 }
+    );
+    els.forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, [selectedTags]);
 
-  // Filter projects based on selected tags
   const filteredProjects = selectedTags.includes("All")
-    ? PROJECTS
-    : PROJECTS.filter((project) =>
-        project.tags.some((tag) => selectedTags.includes(tag))
-      );
+    ? KEY_PROJECTS
+    : KEY_PROJECTS.filter(p => p.tags.some(t => selectedTags.includes(t)));
 
-  // Handle tag selection
-  const handleTagClick = (tag) => {
-    if (tag === "All") {
-      setSelectedTags(["All"]); // Reset to All if All is clicked
-    } else {
-      if (selectedTags.includes("All")) {
-        setSelectedTags([tag]); // Replace All with the specific tag
-      } else {
-        if (selectedTags.includes(tag)) {
-          // Deselect the tag
-          const updatedTags = selectedTags.filter((t) => t !== tag);
-          setSelectedTags(updatedTags.length === 0 ? ["All"] : updatedTags);
-        } else {
-          // Add the tag
-          setSelectedTags([...selectedTags, tag]);
-        }
-      }
-    }
-  };
-
-  // Clear all filters
-  const clearFilters = () => {
-    setSelectedTags(["All"]);
+  const handleTagClick = tag => {
+    if (tag === "All") { setSelectedTags(["All"]); return; }
+    if (selectedTags.includes("All")) { setSelectedTags([tag]); return; }
+    const next = selectedTags.includes(tag)
+      ? selectedTags.filter(t => t !== tag)
+      : [...selectedTags, tag];
+    setSelectedTags(next.length === 0 ? ["All"] : next);
   };
 
   return (
-    <section className="pt-20" id="projects">
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="border-b border-neutral-800 pb-4">
-          <motion.h2
-            whileInView={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            transition={{ duration: 2 }}
-            className="text-3xl text-center my-8"
-          >
-            Projects
-          </motion.h2>
+    <div className="ph-page">
+      <CursorGlow />
+      <PageTopbar />
+
+      <main className="ph-wrap" style={{ paddingTop: "clamp(80px, 12vh, 120px)" }}>
+
+        <button className="ph-projects-back" onClick={() => navigate("/")}>← Back</button>
+
+        <div className="ph-sec-head ph-reveal" style={{ marginTop: "24px" }}>
+          <div className="ph-sec-num"><span>Section</span><b>03 — Projects</b></div>
+          <h2>Everything I've <em>built.</em></h2>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap justify-center items-center gap-4 px-4 mt-6">
-          {PROJECT_TAGS.map((tag) => (
+        <div className="ph-proj-filters ph-reveal">
+          {PROJECT_TAGS.map(tag => (
             <button
               key={tag}
+              className={`ph-proj-filter-btn${selectedTags.includes(tag) ? " active" : ""}`}
               onClick={() => handleTagClick(tag)}
-              className={`mr-2 mt-4 rounded bg-neutral-800 px-2 py-1 text-sm font-medium transition-all ${
-                selectedTags.includes(tag)
-                  ? "bg-pink-300 text-black"
-                  : "bg-neutral-800 text-pink-300 hover:bg-neutral-700 hover:text-pink-200"
-              }`}
             >
               {tag}
             </button>
           ))}
-          {/* Clear Filters Button */}
-          <button
-            onClick={clearFilters}
-            className="mr-2 mt-4 rounded px-2 py-1 text-sm font-medium text-pink-300 hover:bg-neutral-700"
-          >
-            ✖
-          </button>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 px-4 lg:px-8 mt-10">
-          {filteredProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-              className="group relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-lg shadow-pink-500/50 shadow-lg"
+        <div className="ph-projects-grid" style={{ marginTop: "28px" }}>
+          {filteredProjects.map((p, i) => (
+            <a
+              key={i}
+              className="ph-project-card ph-reveal"
+              href={p.link || "#"}
+              target={p.link ? "_blank" : undefined}
+              rel={p.link ? "noopener noreferrer" : undefined}
+              onClick={!p.link ? e => e.preventDefault() : undefined}
+              style={{ textDecoration: "none", transitionDelay: `${(i % 3) * 60}ms` }}
             >
-              {/* Details */}
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {project.name}
-                </h3>
-                <p className="text-sm text-neutral-400 mb-4">
-                  {project.description}
-                </p>
-                {/* Technologies Used */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="rounded bg-neutral-800 px-2 py-1 text-xs font-medium text-pink-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {p.image && (
+                <div className="ph-project-img-wrap">
+                  <img src={p.image} alt={p.title} className="ph-project-img" loading="lazy" />
                 </div>
-                {/* GitHub Link */}
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block rounded-full bg-white text-black hover:bg-gray-300 transition px-3 py-2 text-xs"
-                >
-                  <div className="flex items-center">
-                    <span>View on GitHub</span>
-                    <motion.span
-                      initial={{ rotate: 0 }}
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                      className="ml-2"
-                    >
-                      <FaGithub className="text-sm" />
-                    </motion.span>
-                  </div>
-                </a>
+              )}
+              <div className="ph-project-card-header">
+                {p.link && <HiOutlineExternalLink className="ph-project-link-icon" />}
               </div>
-            </motion.div>
+              <h3>{p.title}<br /><em>{p.sub}</em></h3>
+              <p className="ph-project-desc">{p.desc}</p>
+              <div className="ph-project-tags">
+                {p.tags.map(t => <span key={t} className="ph-project-tag">{t}</span>)}
+              </div>
+            </a>
           ))}
         </div>
-      </motion.div>
-    </section>
+
+        {filteredProjects.length === 0 && (
+          <p style={{ color: "var(--ink-3)", fontFamily: "var(--mono)", fontSize: 12, marginTop: 48 }}>
+            No projects match the selected filter.
+          </p>
+        )}
+
+        <ContactSection style={{ marginTop: "clamp(64px, 10vh, 100px)" }} />
+
+      </main>
+
+      <PageFooter />
+    </div>
   );
 };
 
