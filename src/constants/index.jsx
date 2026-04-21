@@ -234,14 +234,6 @@ export const HACKATHONS = [
 
 export const KEY_PROJECTS = [
   {
-    title: 'DonorConnect',
-    sub: 'Morgan Stanley Code to Give',
-    desc: 'Full-stack charitable giving platform with real-time messaging, sponsorship tracking, and an AI-driven OCR pipeline to digitise handwritten donor journals.',
-    tags: ['Next.js 15', 'FastAPI', 'Supabase', 'Pytesseract'],
-    image: projDonorConnect,
-    link: '',
-  },
-  {
     title: "SMU Patron's Day",
     sub: 'Web Tech Director',
     desc: "Directed full-stack development for SMU's flagship event site, scaling architecture to handle 16,000+ page views — 53% growth year-on-year.",
@@ -255,6 +247,14 @@ export const KEY_PROJECTS = [
     desc: 'Community item-sharing and rental marketplace where neighbours can list, borrow, and earn from everyday items across categories like tools, electronics, and sports gear.',
     tags: ['React', 'Node.js', 'Firebase'],
     image: projShareLah,
+    link: 'share-lah.vercel.app',
+  },
+  {
+    title: 'DonorConnect',
+    sub: 'Morgan Stanley Code to Give',
+    desc: 'Full-stack charitable giving platform with real-time messaging, sponsorship tracking, and an AI-driven OCR pipeline to digitise handwritten donor journals.',
+    tags: ['Next.js 15', 'FastAPI', 'Supabase', 'Pytesseract'],
+    image: projDonorConnect,
     link: '',
   },
   {
@@ -269,28 +269,24 @@ export const KEY_PROJECTS = [
     sub: 'Full-Stack',
     desc: 'Digital Securities product with web + mobile app, database integration, and data visualisations.',
     tags: ['ASP.NET', 'Android', 'SQL', 'AWS'],
-    link: 'https://gtgwendolyn.wixsite.com/website/ocbc',
   },
   {
     title: 'ML Ensemble Models',
     sub: 'Machine Learning',
     desc: 'Ensemble models predicting employee promotions & Airbnb prices — 85%+ accuracy on both.',
     tags: ['Python', 'Scikit-learn', 'ML'],
-    link: 'https://github.com/gwxndolyn/Machine-Learning-Assignment',
   },
   {
     title: 'Natural Language Processing',
     sub: 'Text Analysis',
     desc: 'NLP pipeline extracting keywords from BBC documents and predicting categories using association rule mining.',
     tags: ['Python', 'NLP', 'Text Analysis'],
-    link: 'https://github.com/gwndolyn/Applied-analytics-project',
   },
   {
     title: 'RPA Automation',
     sub: 'Robotic Process Automation',
     desc: 'UIPath bots for Vestas Wind Co — scrapes financial data, calculates KPIs, and emails reports.',
     tags: ['UIPath', 'RPA', 'Python'],
-    link: 'https://github.com/gwxndolyn/RPA-uipath-assignment',
   },
 ];
 

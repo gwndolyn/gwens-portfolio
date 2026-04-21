@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 // icons
 import { RiReactjsLine } from 'react-icons/ri';
-import { FaNodeJs, FaPython, FaJs, FaDatabase, FaJava, FaAws, FaGithub, FaStar, FaCodeBranch, FaLinkedin, FaInstagram, FaExternalLinkAlt, FaLaptopCode } from 'react-icons/fa';
+import { FaNodeJs, FaPython, FaJs, FaDatabase, FaJava, FaAws, FaGithub, FaStar, FaCodeBranch, FaLinkedin, FaInstagram, FaExternalLinkAlt, FaLaptopCode, FaFigma, FaDocker  } from 'react-icons/fa';
 import { FaCodeCommit } from 'react-icons/fa6';
-import { SiTypescript, SiSpringboot, SiFirebase, SiTailwindcss, SiSwagger, SiPhp } from 'react-icons/si';
+import { SiTypescript, SiSpringboot, SiFirebase, SiTailwindcss, SiSwagger, SiPhp, SiRabbitmq } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
 import { PiMicrosoftExcelLogoFill } from 'react-icons/pi';
 import { AiOutlineDotNet } from 'react-icons/ai';
@@ -275,8 +275,9 @@ const SKILLS = [
   { icon: <FaGithub      style={{ fontSize: 38, color: '#d4d0c4' }} />,  label: 'Git',         dur: 2.5 },
   { icon: <FaDatabase    style={{ fontSize: 38, color: '#f472b6' }} />,  label: 'DBT',         dur: 4.0 },
   { icon: <PiMicrosoftExcelLogoFill style={{ fontSize: 38, color: '#16a34a' }} />, label: 'Excel', dur: 2.4 },
-  { icon: <MdOutlineDesignServices style={{ fontSize: 38, color: '#e879f9' }} />, label: 'Figma', dur: 3.2 },
-  { icon: <FaDatabase    style={{ fontSize: 38, color: '#22d3ee' }} />,  label: 'Docker',      dur: 3.6 },
+  { icon: <FaFigma style={{ fontSize: 38, color: '#e879f9' }} />, label: 'Figma', dur: 3.2 },
+  { icon: <FaDocker    style={{ fontSize: 38, color: '#22d3ee' }} />,  label: 'Docker',      dur: 3.6 },
+  { icon: <SiRabbitmq   style={{ fontSize: 38, color: '#fb923c' }} />,  label: 'RabbitMQ',    dur: 3.0 },
 ];
 
 const TECH_AREAS = [
@@ -391,7 +392,7 @@ export default function PortfolioHome() {
                 {!doneTyping && <span className="ph-cursor" />}
               </h1>
               <p className="ph-lede ph-reveal">
-                Aspiring software engineer with a passion for building products and solving problems.
+                I build cool stuff with code.
               </p>
               <div className="ph-hero-social ph-reveal">
                 {SOCIAL_LINKS.map(({ href, icon, label }) => (
