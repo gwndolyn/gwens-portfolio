@@ -48,8 +48,8 @@ import v9 from "../assets/volunteer/ocbc.jpg";
 import v10 from "../assets/volunteer/9.jpg";
 
 import cys from "../assets/qualifications/CYS.png";
-import ocbc from "../assets/qualifications/ocbc.png";
-import smu from "../assets/qualifications/smu.png";
+import ocbc from "../assets/qualifications/OCBC.png";
+import smu from "../assets/qualifications/SMU.png";
 import luxoft from "../assets/qualifications/Luxoft.png";
 import logic from "../assets/qualifications/logic.png";
 import heymax from "../assets/qualifications/heymax.png";
