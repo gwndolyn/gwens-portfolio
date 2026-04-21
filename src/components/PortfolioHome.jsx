@@ -125,6 +125,10 @@ function ContribGrid() {
   const [weeks, setWeeks] = useState([]);
   const [total, setTotal] = useState(null);
   const [months, setMonths] = useState([]);
+  const [scale, setScale] = useState(1);
+  const [innerH, setInnerH] = useState(null);
+  const wrapRef = useRef(null);
+  const innerRef = useRef(null);
 
   useEffect(() => {
     fetch('https://github-contributions-api.jogruber.de/v4/gwxndolyn?y=2025')
@@ -160,6 +164,22 @@ function ContribGrid() {
   const CELL = 11; const GAP = 3;
   const DAY_LABELS = ['', 'Mon', '', 'Wed', '', 'Fri', ''];
 
+  useEffect(() => {
+    if (!weeks.length) return;
+    const update = () => {
+      if (!wrapRef.current || !innerRef.current) return;
+      const available = wrapRef.current.offsetWidth;
+      const naturalW = innerRef.current.scrollWidth;
+      const naturalH = innerRef.current.scrollHeight;
+      const s = naturalW > available ? available / naturalW : 1;
+      setScale(s);
+      setInnerH(naturalH * s);
+    };
+    const ro = new ResizeObserver(update);
+    if (wrapRef.current) ro.observe(wrapRef.current);
+    return () => ro.disconnect();
+  }, [weeks]);
+
   if (!weeks.length) return (
     <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ink-4)', padding: '24px 0' }}>
       Loading contributions…
@@ -167,7 +187,8 @@ function ContribGrid() {
   );
 
   return (
-    <div style={{ overflowX: 'auto', minWidth: 0, width: '100%' }}>
+    <div ref={wrapRef} style={{ width: '100%', overflow: 'hidden', height: innerH ? innerH : undefined }}>
+      <div ref={innerRef} style={{ display: 'inline-block', transformOrigin: 'left top', transform: `scale(${scale})` }}>
       {/* month row */}
       <div style={{ display: 'flex', gap: GAP, marginBottom: 6, paddingLeft: 30 }}>
         {weeks.map((_, wi) => {
@@ -217,6 +238,7 @@ function ContribGrid() {
           {total} contributions in 2025
         </div>
       )}
+      </div>
     </div>
   );
 }
@@ -289,6 +311,21 @@ export default function PortfolioHome() {
   const [typedName, setTypedName] = useState('');
   const [doneTyping, setDoneTyping] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [ghStats, setGhStats] = useState({ repos: null, forks: null, contributions: null });
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/gwxndolyn/repos?per_page=100')
+      .then(r => r.json())
+      .then(repos => {
+        if (!Array.isArray(repos)) return;
+        setGhStats(s => ({ ...s, repos: repos.length, forks: repos.reduce((sum, r) => sum + r.forks_count, 0) }));
+      })
+      .catch(() => {});
+    fetch('https://github-contributions-api.jogruber.de/v4/gwxndolyn?y=2025')
+      .then(r => r.json())
+      .then(data => setGhStats(s => ({ ...s, contributions: data.total?.['2025'] ?? null })))
+      .catch(() => {});
+  }, []);
 
   // typing
   useEffect(() => {
@@ -500,9 +537,9 @@ export default function PortfolioHome() {
                       / gwxndolyn
                     </a>
                     <div className="ph-github-stats">
-                      <div className="ph-github-stat"><FaStar style={{ color: '#eab308' }} /> 25 repos</div>
-                      <div className="ph-github-stat"><FaCodeBranch style={{ color: '#f4b8d0' }} /> 8 forks</div>
-                      <div className="ph-github-stat"><FaCodeCommit style={{ color: '#fb923c' }} /> 201 contributions</div>
+                      <div className="ph-github-stat"><FaStar style={{ color: '#eab308' }} /> {ghStats.repos ?? '—'} repos</div>
+                      <div className="ph-github-stat"><FaCodeBranch style={{ color: '#f4b8d0' }} /> {ghStats.forks ?? '—'} forks</div>
+                      <div className="ph-github-stat"><FaCodeCommit style={{ color: '#fb923c' }} /> {ghStats.contributions ?? '—'} contributions</div>
                     </div>
                   </div>
                 </div>
