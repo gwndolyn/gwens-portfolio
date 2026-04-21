@@ -1,17 +1,11 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion"; // Import AnimatePresence and motion
-import Hero from "./components/Hero";
+import PortfolioHome from "./components/PortfolioHome";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
 import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Qualifications from "./components/Qualifications";
 import Contact from "./components/Contact";
 import Certifications from "./components/Certifications";
-import Volunteering from "./components/Volunteering";
-import Github from "./components/Github";
-import Hackathons from "./components/Hackathons";
 import Log from "./components/Log";
 import LogHome from "./components/LogHome";
 import Marketing from "./components/Marketing";
@@ -43,8 +37,8 @@ const AppContent = () => {
     };
   }, [cursorPosition]);
 
-  const hideNavbar = location.pathname === '/marketing';
-  const isMarketingPage = location.pathname === '/marketing';
+  const hideNavbar = location.pathname === '/marketing' || location.pathname === '/' || location.pathname === '/projects' || location.pathname === '/certifications';
+  const isMarketingPage = location.pathname === '/marketing' || location.pathname === '/' || location.pathname === '/projects' || location.pathname === '/certifications';
 
   return (
       <div className="relative h-full overflow-hidden antialiased">
@@ -84,19 +78,13 @@ const AppContent = () => {
               path="/"
               element={
                 <motion.div
-                  className="relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto"
+                  className="relative z-10 w-full h-full"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <Hero />
-                  <About />
-                  <Skills />
-                  <Hackathons />
-                  <Github />
-                  <Qualifications />
-                  <Contact />
+                  <PortfolioHome />
                 </motion.div>
               }
             />
@@ -106,48 +94,30 @@ const AppContent = () => {
               path="/certifications"
               element={
                 <motion.div
-                  className="relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto"
+                  className="relative z-10 w-full h-full"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 0.5 }}
                 >
                   <Certifications />
-                  <Contact />
                 </motion.div>
               }
             />
 
-            {/* Route for Volunteering */}
-            <Route
-              path="/volunteering"
-              element={
-                <motion.div
-                  className="relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
-                >
-                  <Volunteering />
-                  <Contact />
-                </motion.div>
-              }
-            />
 
             {/* Route for Projects */}
             <Route
               path="/projects"
               element={
                 <motion.div
-                  className="relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto"
+                  className="relative z-10 w-full h-full"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 0.5 }}
                 >
                   <Projects />
-                  <Contact />
                 </motion.div>
               }
             />

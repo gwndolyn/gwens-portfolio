@@ -25,3 +25,7 @@ replay_pid*
 
 # Node modules
 node_modules/
+dist/
+
+.env
+.claude

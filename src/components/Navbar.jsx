@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
+import gwnLogo from "../assets/gwn-logo.png";
 import { NAVIGATION_LINKS } from "../constants";
 import { FaTimes, FaBars, FaRegUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -54,8 +55,9 @@ const Navbar = () => {
         <div className="mx-auto hidden max-w-2xl items-center justify-center rounded-lg border border-stone-50/30 bg-black/20 py-3 backdrop-blur-lg lg:flex">
           <div className="flex items-center gap-6">
             <div>
-              <a href="#home" onClick={(e) => handleLinkClick(e, "#home")}>
-                <img src={logo} width={70} alt="logo" className="logo" />
+              <a href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="flex items-center gap-2">
+                <img src={gwnLogo} width={36} height={36} alt="gwn logo" style={{ objectFit: 'contain' }} />
+                <span style={{ fontFamily: 'Fraunces, serif', fontSize: '15px', fontWeight: 300, letterSpacing: '0.04em', color: '#d6d0c4' }}>Gwendolyn Leong</span>
               </a>
             </div>
             <div>
@@ -80,8 +82,9 @@ const Navbar = () => {
         <div className="rounded-lg backdrop-blur-md lg:hidden">
           <div className="flex items-center justify-between p-4">
             <div>
-              <a href="#home" onClick={(e) => handleLinkClick(e, "#home")}>
-                <img src={logo} alt="logo" width={70} className="logo" />
+              <a href="#home" onClick={(e) => handleLinkClick(e, "#home")} className="flex items-center gap-2">
+                <img src={gwnLogo} width={32} height={32} alt="gwn logo" style={{ objectFit: 'contain' }} />
+                <span style={{ fontFamily: 'Fraunces, serif', fontSize: '14px', fontWeight: 300, color: '#d6d0c4' }}>Gwendolyn Leong</span>
               </a>
             </div>
             <div className="flex items-center">

@@ -48,21 +48,27 @@ import v9 from "../assets/volunteer/ocbc.jpg";
 import v10 from "../assets/volunteer/9.jpg";
 
 import cys from "../assets/qualifications/CYS.png";
-import ocbc from "../assets/qualifications/ocbc.jpg";
-import smu from "../assets/qualifications/smu.jpg";
+import ocbc from "../assets/qualifications/ocbc.png";
+import smu from "../assets/qualifications/smu.png";
 import luxoft from "../assets/qualifications/Luxoft.png";
-import logic from "../assets/qualifications/logic.jpg";
+import logic from "../assets/qualifications/logic.png";
 import heymax from "../assets/qualifications/heymax.png";
 import youthtech from "../assets/qualifications/youthtech.jpeg";
 import pwc from "../assets/qualifications/pwc.png";
 import np from "../assets/qualifications/ngee_ann_polytechnic_logo.jpeg";
+import govtech from "../assets/qualifications/govtech.png";
+import productclub from "../assets/qualifications/productclub.png";
+import stereometa from "../assets/qualifications/stereometa.png";
+import fintech from "../assets/qualifications/fintech.png";
 
+import projDonorConnect from "../assets/proj-donorconnect.png";
+import projPD26 from "../assets/proj-pd26.png";
+import projShareLah from "../assets/proj-sharelah.png";
 
 export const NAVIGATION_LINKS = [
   { label: "Skills", href: "#skills" },
   { label: "Qualifications", href: "#qualify" },
   { label: "Projects", href: "/projects" },
-  { label: "Volunteering", href: "/volunteering" },
   { label: "Certifications", href: "/certifications" },
 ];
 
@@ -75,89 +81,120 @@ export const HERO = {
 
 export const ABOUT = [
   "Whether it's through coding, systems design, or tackling technical challenges, I’m driven by the potential to create innovative solutions. I have a particular interest in areas that promote inclusivity and accessibility, which fuels my curiosity and dedication to learning and developing impactful projects.",
-  "When I'm not on my computer, I love going to the gym, playing sports, and volunteering. Hearing stories inspires me, as I believe there’s unique value in everyone. I’m always excited to contribute, grow, and learn from the experiences and insights others bring."
 ];
 
 export const EXPERIENCES = [
   {
-    year: "Jan 2026 - Jun 2026",
-    role: "Digital Cloud & Data Consulting Intern",
+    year: "May 2026 – Present",
+    role: "Software Engineer Intern",
+    company: "GovTech",
+    logo: govtech,
+    description: `Singpass Team`,
+    technologies: ["React", "TypeScript", "Web Accessibility"],
+  },
+  {
+    year: "Jan 2026 – Apr 2026",
+    role: "Product Engineer Intern",
     company: "PwC",
     logo: pwc,
+    description: `Digital Cloud Data`,
+    technologies: ["CRM", "UAT", "Process Automation"],
+  },
+  {
+    year: "May 2025 – Aug 2025",
+    role: "Software & Analytics Engineer Intern",
+    company: "HeyMax",
+    logo: heymax,
+    description: ``,
+    technologies: ["Python", "SQL", "DBT", "n8n", "CI/CD"],
+  },
+  {
+    year: "Jun 2024 – May 2025",
+    role: "Junior Data Engineer",
+    company: "Luxoft",
+    logo: luxoft,
+    description: ``,
+    technologies: ["Cloudera", "AWS", "Azure", "ETL", "Big Data"],
+  },
+  {
+    year: "Mar 2023 – Mar 2024",
+    role: "Software Engineer Intern",
+    company: "OCBC",
+    logo: ocbc,
+    description: `Group Operations & Technology`,
+    technologies: ["ReactJS", "TypeScript", "Spring Boot", "CI/CD", "SQL"],
+  },
+  {
+    year: "Jan 2026 – Present",
+    role: "Marketing Director",
+    company: "SMU FinTech",
+    logo: fintech,
     description: ``,
     technologies: [],
   },
   {
-    year: "May 2025 - Aug 2025",
-    role: "Software & Analytics Engineer Intern",
-    company: "HeyMax",
-    logo: heymax,
-    description: `Developing data pipelines and analytics solutions using Python and SQL. Working with modern data stack tools including DBT for data transformation, GCP for cloud infrastructure, and n8n for workflow automation. Contributing to the design and implementation of scalable data engineering solutions.`,
-    technologies: ["Python", "SQL", "DBT", "GCP", "n8n"],
+    year: "Oct 2025 – Present",
+    role: "Marketing Director",
+    company: "SMU Product Club",
+    logo: productclub,
+    description: ``,
+    technologies: [],
   },
   {
-    year: "Mar 2025 - Present",
+    year: "Oct 2025 – Present",
+    role: "Marketing Director",
+    company: "SMU Stereometa",
+    logo: stereometa,
+    description: ``,
+    technologies: [],
+  },
+  {
+    year: "Aug 2025 – Jan 2026",
+    role: "Web Tech Director",
+    company: "SMU Patron's Day",
+    logo: smu,
+    description: `Directed full-stack development and deployment for SMU's flagship event site, scaling architecture to handle 16,000+ page views (53% growth).`,
+    technologies: ["React", "Full-Stack", "Web Dev"],
+  },
+  {
+    year: "Apr 2025 – Jan 2026",
     role: "Tech Division Associate, Technical Product Manager",
     company: "YouthTechSG",
     logo: youthtech,
-    description: `Leading technical product initiatives and managing cross-functional teams to deliver technology solutions for youth empowerment. Collaborating with stakeholders to define product roadmaps, prioritize features, and drive technical strategy. Bridging the gap between technical teams and business objectives to create impactful solutions.`,
-    technologies: ["Product Management", "Agile", "Stakeholder Management", "Technical Strategy"],
+    description: ``,
+    technologies: [],
   },
   {
-    year: "Apr 2024 - Present",
+    year: "Apr 2025 – Jul 2025",
     role: "UI/UX Designer",
-    company: "SMU Dato Kho Hui Meng Career Centre",
+    company: "SMU Dato' Kho Hui Meng Career Centre",
     logo: smu,
-    description: `Designing user-centered interfaces and experiences for career services platforms. Creating wireframes, prototypes, and high-fidelity designs using Figma. Conducting user research and usability testing to inform design decisions and improve student engagement with career resources.`,
-    technologies: ["Figma", "UI/UX Design", "User Research", "Prototyping"],
+    description: `Revamped the DKHMCC portal via a comprehensive UX audit and Figma prototyping, driving a 35% increase in organic traffic.`,
+    technologies: ["Figma", "UX Research"],
   },
   {
-    year: "Jun 2024 - Jun 2025",
-    role: "Data Engineer Intern",
-    company: "Luxoft",
-    logo: luxoft,
-    description: `Built and maintained big data pipelines for financial markets applications. Worked with distributed computing frameworks including Apache Spark and Hadoop to process large-scale datasets. Implemented data architecture solutions and containerized applications using Docker. Gained hands-on experience in financial data processing and enterprise-level data engineering practices.`,
-    technologies: ["Big Data", "Financial Markets", "Data Architecture", "Apache Spark", "Docker", "Hadoop"],
-  },
-  {
-    year: "Mar 2024 - Present",
-    role: "Python Tutor",
-    company: "The Logic Coders",
-    logo: logic,
-    description: `Teaching Python programming fundamentals to students of varying skill levels. Developing customized lesson plans and coding exercises to enhance learning outcomes. Mentoring students in problem-solving, algorithmic thinking, and best coding practices. Fostering a supportive learning environment to build students' confidence in programming.`,
-    technologies: ["Python", "Teaching", "Curriculum Development", "Mentoring"],
-  },
-  {
-    year: "Aug 2024 - Jan 2025",
-    role: "Web Tech Associate",
-    company: "SMU Patron's Day",
-    logo: smu,
-    description: `Contributed to the design and development of web assets for SMU Patron's Day event. Created design mockups and collaborated with the technical team to implement responsive web interfaces. Ensured consistent branding and user experience across digital touchpoints for the university's flagship event.`,
-    technologies: ["Figma", "Web Design", "UI Design"],
-  },
-  {
-    year: "Sep 2024 - Oct 2024",
+    year: "Sep 2024 – Oct 2024",
     role: "Data Analyst",
     company: "SMU Office of Research",
     logo: smu,
-    description: `Analyzed research data and generated insights to support academic research initiatives. Performed data cleaning, transformation, and statistical analysis using Excel. Created visualizations and reports to communicate findings to stakeholders and support data-driven decision making for research projects.`,
-    technologies: ["Excel", "Data Analysis", "Statistical Analysis", "Data Visualization"],
+    description: `Compiled and verified research data for SMU's annual Ministry of Education Postgraduate Research Quality Report.`,
+    technologies: ["Excel", "Data Analysis"],
   },
   {
-    year: "Mar 2023 - Mar 2024",
-    role: "Software Engineer Intern",
-    company: "OCBC",
-    logo: ocbc,
-    description: `Developed full-stack web applications using ReactJS, TypeScript, and Tailwind CSS for the frontend, and SpringBoot for backend services. Integrated APIs using WSO2 and documented endpoints with Swagger UI. Managed SQL databases and participated in UAT deployment processes. Contributed to CI/CD automation pipelines to streamline development workflows and improve deployment efficiency.`,
-    technologies: ["ReactJS", "Typescript", "Tailwind CSS", "SpringBoot", "WSO2", "Swagger UI", "SQL", "UAT Deployment", "CI/CD Automation"],
+    year: "Mar 2024 – Dec 2026",
+    role: "Python Tutor",
+    company: "The Logic Coders",
+    logo: logic,
+    description: ``,
+    technologies: [],
   },
 ];
 
 export const EDUCATION = [
   {
-    degree: "Bachelor of Science, Information Systems",
-    institution: "Singapore Management University",
-    duration: "2024 - 2028",
+    degree: "Singapore Management University",
+    institution: "BSc Information Systems, Double Major in Product Development & Artificial Intelligence",
+    duration: "2024 – 2028",
     logo: smu,
     description: [
       "Leadership:",
@@ -173,8 +210,8 @@ export const EDUCATION = [
     ],
   },
   {
-    degree: "Diploma in Information Technology, Minor in Global Readiness",
-    institution: "Ngee Ann Polytechnic",
+    degree: "Ngee Ann Polytechnic",
+    institution: "Diploma in Information Technology, Minor in Global Readiness",
     duration: "2021-2024",
     logo: np,
     description: [
@@ -195,100 +232,69 @@ export const HACKATHONS = [
   "GIC #CODETOIMPACT, 2025",
 ];
 
-export const PROJECT_TAGS = ["All", "Web Development", "Machine Learning", "RPA", "Mobile Apps", "Excel"];
-
-export const PROJECTS = [
+export const KEY_PROJECTS = [
   {
-    id: 1,
-    name: "DSTA Brainhack 2024",
-    description:
-      "Participated in the TIL-AI Autonomous Robotics Challenge. Tasks included Automatic Speech Recognition (ASR), Natural Language Processing (NLP), and Vision-Language Model (VLM) tasks for autonomous target detection and drone takedown.",
-    technologies: ["Google Cloud", "Colab", "Python", "HuggingFace"],
-    image: "brainhack.png",
-    githubLink: "",
-    tags: ["AI", "Machine Learning", "Natural Language Processing", "Computer Vision"],
+    title: 'DonorConnect',
+    sub: 'Morgan Stanley Code to Give',
+    desc: 'Full-stack charitable giving platform with real-time messaging, sponsorship tracking, and an AI-driven OCR pipeline to digitise handwritten donor journals.',
+    tags: ['Next.js 15', 'FastAPI', 'Supabase', 'Pytesseract'],
+    image: projDonorConnect,
+    link: '',
   },
   {
-    id: 2,
-    name: "OCBC Hackathon",
-    description:
-      "Developed a Digital Securities Product and Account Application with both a web and mobile application, along with database integration and data visualizations.",
-    technologies: ["ASP.NET", "Android Studio", "SQL", "AWS", "Power BI"],
-    image:"",
-    githubLink: "https://gtgwendolyn.wixsite.com/website/ocbc",
-    tags: ["Web Development", "Mobile Apps", "Hackathon"],
+    title: "SMU Patron's Day",
+    sub: 'Web Tech Director',
+    desc: "Directed full-stack development for SMU's flagship event site, scaling architecture to handle 16,000+ page views — 53% growth year-on-year.",
+    tags: ['React', 'Full-Stack'],
+    image: projPD26,
+    link: '',
   },
   {
-    id: 3,
-    name: "Blacktag",
-    description:
-      "Designed and developed an e-commerce website using HTML, CSS, JavaScript, and APIs. Implemented dynamic functionality for a seamless user experience.",
-    technologies: ["HTML", "CSS", "JavaScript", "APIs"],
-    image:"",
-    githubLink: "https://smyyhzai.github.io/ID_blacktag_Website/index.html",
-    tags: ["Web Development", "E-Commerce"],
+    title: 'ShareLah',
+    sub: 'Peer-to-Peer Sharing Platform',
+    desc: 'Community item-sharing and rental marketplace where neighbours can list, borrow, and earn from everyday items across categories like tools, electronics, and sports gear.',
+    tags: ['React', 'Node.js', 'Firebase'],
+    image: projShareLah,
+    link: '',
   },
   {
-    id: 4,
-    name: "Expense Tracker",
-    description:
-      "Developed a personalized Monthly Expense Tracker using Microsoft Excel. Integrated dropdown menus, charts, and automated calculations for budgeting.",
-    technologies: ["Microsoft Excel"],
-    image:"",
-    githubLink: "https://docs.google.com/spreadsheets/d/1gqsZkwWjw5JaK_Y8QwsuYg05Ni9S4OZy/edit?usp=sharing&ouid=102061921029976045401&rtpof=true&sd=true",
-    tags: ["Finance", "Automation", "Excel"],
+    title: 'DSTA Brainhack',
+    sub: 'AI & Robotics',
+    desc: 'Autonomous robotics challenge — ASR, NLP, and Vision-Language Models for target detection and drone coordination.',
+    tags: ['Python', 'HuggingFace', 'GCP'],
+    link: '',
   },
   {
-    id: 5,
-    name: "GPA Calculator",
-    description:
-      "Created a GPA Calculator in Excel to help students calculate their GPA. Designed formulas, error-checking mechanisms, and user-friendly interfaces.",
-    technologies: ["Microsoft Excel"],
-    image:"",
-    githubLink: "https://docs.google.com/spreadsheets/d/1fVEA-7P26Et5SzV413N758VSJ3RE3qUY/edit?usp=sharing&ouid=114436406465873239309&rtpof=true&sd=true",
-    tags: ["Education", "Excel", "Automation"],
+    title: 'OCBC Hackathon',
+    sub: 'Full-Stack',
+    desc: 'Digital Securities product with web + mobile app, database integration, and data visualisations.',
+    tags: ['ASP.NET', 'Android', 'SQL', 'AWS'],
+    link: 'https://gtgwendolyn.wixsite.com/website/ocbc',
   },
   {
-    id: 6,
-    name: "Machine Learning Models",
-    description:
-      "Developed ensemble models to predict employee promotions and Airbnb prices. Achieved over 85% accuracy on both models.",
-    technologies: ["Machine Learning"],
-    image:"",
-    githubLink: "https://github.com/gwndolyn/Machine-Learning-Assignment",
-    tags: ["Machine Learning", "Data Science", "Prediction"],
+    title: 'ML Ensemble Models',
+    sub: 'Machine Learning',
+    desc: 'Ensemble models predicting employee promotions & Airbnb prices — 85%+ accuracy on both.',
+    tags: ['Python', 'Scikit-learn', 'ML'],
+    link: 'https://github.com/gwxndolyn/Machine-Learning-Assignment',
   },
   {
-    id: 7,
-    name: "Natural Language Processing",
-    description:
-      "Used NLP and Text Analysis to extract keywords from BBC documents and predict categories using association rule mining.",
-    technologies: ["Natural Language Processing"],
-    image:"",
-    githubLink: "https://github.com/gwndolyn/Applied-analytics-project",
-    tags: ["Natural Language Processing", "Text Analysis", "Machine Learning"],
+    title: 'Natural Language Processing',
+    sub: 'Text Analysis',
+    desc: 'NLP pipeline extracting keywords from BBC documents and predicting categories using association rule mining.',
+    tags: ['Python', 'NLP', 'Text Analysis'],
+    link: 'https://github.com/gwndolyn/Applied-analytics-project',
   },
   {
-    id: 8,
-    name: "Robotic Process Automation",
-    description:
-      "Developed automation using UIPath for Vestas Wind Co to scrape financial data, calculate matrices, generate visualizations, and send email reports.",
-    technologies: ["RPA", "UIPath"],
-    image:"",
-    githubLink: "https://github.com/gwndolyn/RPA-uipath-assignment",
-    tags: ["RPA", "Automation", "Data Visualization"],
-  },
-  {
-    id: 9,
-    name: "ZZ Fashion CRM",
-    description:
-      "Built a robust CRM website using ASP.NET Core MVC. Integrated features for customer data management, secure authentication, and CRUD operations.",
-    technologies: ["C#", "ASP.NET Core MVC"],
-    image:"",
-    githubLink: "https://bitbucket.org/kamiislu/web2022apr_p02_t3/src/master/",
-    tags: ["Web Development", "CRM", "C#"],
+    title: 'RPA Automation',
+    sub: 'Robotic Process Automation',
+    desc: 'UIPath bots for Vestas Wind Co — scrapes financial data, calculates KPIs, and emails reports.',
+    tags: ['UIPath', 'RPA', 'Python'],
+    link: 'https://github.com/gwxndolyn/RPA-uipath-assignment',
   },
 ];
+
+export const PROJECT_TAGS = [];
 
 
 

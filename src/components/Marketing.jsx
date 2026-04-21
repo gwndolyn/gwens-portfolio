@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import DomeGallery from './DomeGallery';
 import Masonry from './Masonry';
 import MarketingTools from './MarketingTools';
-import logo from '../assets/logo.png';
+import logo from '../assets/gwn-logo.png';
 import gwenImg from '../assets/gwen.png';
 import connect from '../assets/marketing/connect.png';
 
@@ -138,7 +138,7 @@ export default function Marketing() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <img src={logo} alt="Logo" className="w-auto h-6 lg:h-8" />
+        <img src={logo} alt="Logo" className="w-auto h-6 lg:h-20" />
       </motion.a>
 
       {/* DomeGallery + Name Section - sticky background */}
