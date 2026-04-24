@@ -3,7 +3,7 @@ const LINKS = [
   { label: 'Github',    href: 'https://github.com/gwxndolyn',         value: '/gwxndolyn',   external: true },
   { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/gwndolyn', value: '/in/gwndolyn', external: true },
   { label: 'Instagram', href: 'https://instagram.com/gwenxdolyn/',    value: '@gwenxdolyn',  external: true },
-  { label: 'Marketing', href: '/marketing', value: 'design portfolio' },
+  { label: 'Marketing', href: 'https://coolstuff.gwndolyn.live/', value: 'design portfolio' },
 ];
 
 export default function ContactSection({ style }) {
