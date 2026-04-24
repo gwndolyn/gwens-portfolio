@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { motion, AnimatePresence } from "framer-motion"; // Import AnimatePresence and motion
 import PortfolioHome from "./components/PortfolioHome";
 import Navbar from "./components/Navbar";
@@ -181,6 +182,7 @@ const App = () => {
   return (
     <Router>
       <AppContent />
+      <SpeedInsights />
     </Router>
   );
 };

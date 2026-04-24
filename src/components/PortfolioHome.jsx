@@ -255,7 +255,7 @@ const SOCIAL_LINKS = [
 const WHAT_I_DO = [
   { title: 'Software Engineering', href: '#projects',   linkLabel: 'View Projects',  external: false },
   { title: 'Web Development',      href: '#projects',   linkLabel: 'View Portfolio', external: false },
-  { title: 'Design & Marketing',   href: '/marketing',  linkLabel: 'View Work',      external: true },
+  { title: 'Design & Marketing',   href: 'https://coolstuff.gwndolyn.live/',  linkLabel: 'View Work',      external: true },
 ];
 
 const SKILLS = [
